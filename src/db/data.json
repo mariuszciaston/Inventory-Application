@@ -1,0 +1,162 @@
+[
+  {
+    "Game": "Heroes of Might and Magic II",
+    "Genre": "Turn-based strategy",
+    "Released": 1996,
+    "Developer": "New World Computing",
+    "Publisher": "The 3DO Company",
+    "Platform": ["DOS", "Windows", "Mac OS"]
+  },
+  {
+    "Game": "Heroes of Might and Magic III",
+    "Genre": "Turn-based strategy",
+    "Released": 1999,
+    "Developer": "New World Computing",
+    "Publisher": "The 3DO Company",
+    "Platform": ["Windows", "Mac OS", "Linux"]
+  },
+  {
+    "Game": "Age of Empires",
+    "Genre": "Real-time strategy",
+    "Released": 1997,
+    "Developer": "Ensemble Studios",
+    "Publisher": "Microsoft",
+    "Platform": ["Windows"]
+  },
+  {
+    "Game": "Age of Empires II",
+    "Genre": "Real-time strategy",
+    "Released": 1999,
+    "Developer": "Ensemble Studios",
+    "Publisher": "Microsoft",
+    "Platform": ["Windows", "Mac OS", "PlayStation 2"]
+  },
+  {
+    "Game": "Populous: The Beginning",
+    "Genre": "Real-time strategy",
+    "Released": 1998,
+    "Developer": "Bullfrog Productions",
+    "Publisher": "Electronic Arts",
+    "Platform": ["Windows", "PlayStation"]
+  },
+  {
+    "Game": "Dark Colony",
+    "Genre": "Real-time strategy",
+    "Released": 1997,
+    "Developer": "Alternative Reality Technologies",
+    "Publisher": "Take-Two Interactive",
+    "Platform": ["Windows", "Mac OS"]
+  },
+  {
+    "Game": "Settlers 2",
+    "Genre": "Real-time strategy",
+    "Released": 1996,
+    "Developer": "Blue Byte",
+    "Publisher": "Blue Byte",
+    "Platform": ["DOS", "Windows", "Mac OS"]
+  },
+  {
+    "Game": "Settlers 3",
+    "Genre": "Real-time strategy",
+    "Released": 1998,
+    "Developer": "Blue Byte",
+    "Publisher": "Blue Byte",
+    "Platform": ["Windows"]
+  },
+  {
+    "Game": "Warcraft III",
+    "Genre": "Real-time strategy",
+    "Released": 2002,
+    "Developer": "Blizzard Entertainment",
+    "Publisher": "Blizzard Entertainment",
+    "Platform": ["Windows", "Mac OS"]
+  },
+  {
+    "Game": "StarCraft",
+    "Genre": "Real-time strategy",
+    "Released": 1998,
+    "Developer": "Blizzard Entertainment",
+    "Publisher": "Blizzard Entertainment",
+    "Platform": ["Windows", "Mac OS"]
+  },
+  {
+    "Game": "StarCraft 2",
+    "Genre": "Real-time strategy",
+    "Released": 2010,
+    "Developer": "Blizzard Entertainment",
+    "Publisher": "Blizzard Entertainment",
+    "Platform": ["Windows", "Mac OS"]
+  },
+  {
+    "Game": "Diablo",
+    "Genre": "Action role-playing",
+    "Released": 1998,
+    "Developer": "Blizzard North",
+    "Publisher": "Blizzard Entertainment",
+    "Platform": ["Windows", "Mac OS"]
+  },
+  {
+    "Game": "Diablo II",
+    "Genre": "Action role-playing",
+    "Released": 2000,
+    "Developer": "Blizzard North",
+    "Publisher": "Blizzard Entertainment",
+    "Platform": ["Windows", "Mac OS"]
+  },
+  {
+    "Game": "Fallout",
+    "Genre": "Role-playing",
+    "Released": 1997,
+    "Developer": "Interplay Productions",
+    "Publisher": "Interplay Productions",
+    "Platform": ["Windows", "PlayStation"]
+  },
+  {
+    "Game": "Fallout 2",
+    "Genre": "Role-playing",
+    "Released": 1998,
+    "Developer": "Black Isle Studios",
+    "Publisher": "Interplay Productions",
+    "Platform": ["Windows"]
+  },
+  {
+    "Game": "Gorky 17",
+    "Genre": "Tactical role-playing",
+    "Released": 1999,
+    "Developer": "Metamorf / Monolith Productions",
+    "Publisher": "Monolith Productions",
+    "Platform": ["Windows"]
+  },
+  {
+    "Game": "The Neverhood",
+    "Genre": "Point-and-click adventure",
+    "Released": 1996,
+    "Developer": "The Neverhood, Inc.",
+    "Publisher": "DreamWorks Interactive",
+    "Platform": ["Windows", "Mac OS"]
+  },
+  {
+    "Game": "Oddworld: Abe’s Oddysee",
+    "Genre": "Platformer",
+    "Released": 1997,
+    "Developer": "Oddworld Inhabitants",
+    "Publisher": "GT Interactive",
+    "Platform": ["PlayStation", "Windows"]
+  },
+  {
+    "Game": "Oddworld: Abe’s Exoddus",
+    "Genre": "Platformer",
+    "Released": 1998,
+    "Developer": "Oddworld Inhabitants",
+    "Publisher": "GT Interactive",
+    "Platform": ["PlayStation", "Windows"]
+  },
+  {
+    "Game": "Tekken 3",
+    "Genre": "Fighting",
+    "Released": 1997,
+    "Developer": "Namco",
+    "Publisher": "Namco",
+    "Platform": ["Arcade", "PlayStation"]
+  }
+]
