@@ -48,7 +48,7 @@
     "Platform": ["Windows", "Mac OS"]
   },
   {
-    "Game": "Settlers 2",
+    "Game": "Settlers II",
     "Genre": "Real-time strategy",
     "Released": 1996,
     "Developer": "Blue Byte",
@@ -56,7 +56,7 @@
     "Platform": ["DOS", "Windows", "Mac OS"]
   },
   {
-    "Game": "Settlers 3",
+    "Game": "Settlers III",
     "Genre": "Real-time strategy",
     "Released": 1998,
     "Developer": "Blue Byte",
@@ -80,7 +80,7 @@
     "Platform": ["Windows", "Mac OS"]
   },
   {
-    "Game": "StarCraft 2",
+    "Game": "StarCraft II",
     "Genre": "Real-time strategy",
     "Released": 2010,
     "Developer": "Blizzard Entertainment",
