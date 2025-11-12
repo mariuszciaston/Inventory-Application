@@ -1,6 +1,6 @@
 [
   {
-    "Game": "Heroes of Might and Magic II",
+    "Title": "Heroes of Might and Magic II",
     "Genre": "Turn-based strategy",
     "Released": 1996,
     "Developer": "New World Computing",
@@ -8,7 +8,7 @@
     "Platform": ["DOS", "Windows", "Mac OS"]
   },
   {
-    "Game": "Heroes of Might and Magic III",
+    "Title": "Heroes of Might and Magic III",
     "Genre": "Turn-based strategy",
     "Released": 1999,
     "Developer": "New World Computing",
@@ -16,7 +16,7 @@
     "Platform": ["Windows", "Mac OS", "Linux"]
   },
   {
-    "Game": "Age of Empires",
+    "Title": "Age of Empires",
     "Genre": "Real-time strategy",
     "Released": 1997,
     "Developer": "Ensemble Studios",
@@ -24,7 +24,7 @@
     "Platform": ["Windows"]
   },
   {
-    "Game": "Age of Empires II",
+    "Title": "Age of Empires II",
     "Genre": "Real-time strategy",
     "Released": 1999,
     "Developer": "Ensemble Studios",
@@ -32,7 +32,7 @@
     "Platform": ["Windows", "Mac OS", "PlayStation 2"]
   },
   {
-    "Game": "Populous: The Beginning",
+    "Title": "Populous: The Beginning",
     "Genre": "Real-time strategy",
     "Released": 1998,
     "Developer": "Bullfrog Productions",
@@ -40,7 +40,7 @@
     "Platform": ["Windows", "PlayStation"]
   },
   {
-    "Game": "Dark Colony",
+    "Title": "Dark Colony",
     "Genre": "Real-time strategy",
     "Released": 1997,
     "Developer": "Alternative Reality Technologies",
@@ -48,7 +48,7 @@
     "Platform": ["Windows", "Mac OS"]
   },
   {
-    "Game": "Settlers II",
+    "Title": "Settlers II",
     "Genre": "Real-time strategy",
     "Released": 1996,
     "Developer": "Blue Byte",
@@ -56,7 +56,7 @@
     "Platform": ["DOS", "Windows", "Mac OS"]
   },
   {
-    "Game": "Settlers III",
+    "Title": "Settlers III",
     "Genre": "Real-time strategy",
     "Released": 1998,
     "Developer": "Blue Byte",
@@ -64,7 +64,7 @@
     "Platform": ["Windows"]
   },
   {
-    "Game": "Warcraft III",
+    "Title": "Warcraft III",
     "Genre": "Real-time strategy",
     "Released": 2002,
     "Developer": "Blizzard Entertainment",
@@ -72,7 +72,7 @@
     "Platform": ["Windows", "Mac OS"]
   },
   {
-    "Game": "StarCraft",
+    "Title": "StarCraft",
     "Genre": "Real-time strategy",
     "Released": 1998,
     "Developer": "Blizzard Entertainment",
@@ -80,7 +80,7 @@
     "Platform": ["Windows", "Mac OS"]
   },
   {
-    "Game": "StarCraft II",
+    "Title": "StarCraft II",
     "Genre": "Real-time strategy",
     "Released": 2010,
     "Developer": "Blizzard Entertainment",
@@ -88,7 +88,7 @@
     "Platform": ["Windows", "Mac OS"]
   },
   {
-    "Game": "Diablo",
+    "Title": "Diablo",
     "Genre": "Action role-playing",
     "Released": 1998,
     "Developer": "Blizzard North",
@@ -96,7 +96,7 @@
     "Platform": ["Windows", "Mac OS"]
   },
   {
-    "Game": "Diablo II",
+    "Title": "Diablo II",
     "Genre": "Action role-playing",
     "Released": 2000,
     "Developer": "Blizzard North",
@@ -104,7 +104,7 @@
     "Platform": ["Windows", "Mac OS"]
   },
   {
-    "Game": "Fallout",
+    "Title": "Fallout",
     "Genre": "Role-playing",
     "Released": 1997,
     "Developer": "Interplay Productions",
@@ -112,7 +112,7 @@
     "Platform": ["Windows", "PlayStation"]
   },
   {
-    "Game": "Fallout 2",
+    "Title": "Fallout 2",
     "Genre": "Role-playing",
     "Released": 1998,
     "Developer": "Black Isle Studios",
@@ -120,7 +120,7 @@
     "Platform": ["Windows"]
   },
   {
-    "Game": "Gorky 17",
+    "Title": "Gorky 17",
     "Genre": "Tactical role-playing",
     "Released": 1999,
     "Developer": "Metropolis Software",
@@ -128,7 +128,7 @@
     "Platform": ["Windows"]
   },
   {
-    "Game": "The Neverhood",
+    "Title": "The Neverhood",
     "Genre": "Point-and-click adventure",
     "Released": 1996,
     "Developer": "The Neverhood, Inc.",
@@ -136,7 +136,7 @@
     "Platform": ["Windows", "Mac OS"]
   },
   {
-    "Game": "Oddworld: Abe’s Oddysee",
+    "Title": "Oddworld: Abe’s Oddysee",
     "Genre": "Platformer",
     "Released": 1997,
     "Developer": "Oddworld Inhabitants",
@@ -144,7 +144,7 @@
     "Platform": ["PlayStation", "Windows"]
   },
   {
-    "Game": "Oddworld: Abe’s Exoddus",
+    "Title": "Oddworld: Abe’s Exoddus",
     "Genre": "Platformer",
     "Released": 1998,
     "Developer": "Oddworld Inhabitants",
@@ -152,7 +152,7 @@
     "Platform": ["PlayStation", "Windows"]
   },
   {
-    "Game": "Tekken 3",
+    "Title": "Tekken 3",
     "Genre": "Fighting",
     "Released": 1997,
     "Developer": "Namco",
