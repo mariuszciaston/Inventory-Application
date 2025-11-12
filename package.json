@@ -17,8 +17,9 @@
     "clean": "rm -rf dist",
     "build": "tsc -p tsconfig.build.json && cp -r src/views dist/views",
     "start": "node dist/index.js",
-    "seed": "node src/db/seed.ts",
-    "local-db-start": "sudo service postgresql start"
+    "local-db-start": "sudo service postgresql start",
+    "reset-db": "psql -d postgres -c \"DROP DATABASE IF EXISTS games_db\" && psql -d postgres -c \"CREATE DATABASE games_db\"",
+    "seed": "node src/db/seed.ts"
   },
   "keywords": [],
   "author": "",
