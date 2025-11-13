@@ -133,12 +133,10 @@ const insertData = async (client: Client) => {
 };
 
 await (async () => {
-  console.log("Starting...");
+  console.log("Connecting...");
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
   });
-
-  console.log("Connecting...");
   await client.connect();
 
   console.log("Creating tables...");
