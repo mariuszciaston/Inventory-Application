@@ -8,7 +8,7 @@
   },
   "scripts": {
     "tailwind:watch": "npx @tailwindcss/cli -i src/styles/input.css -o public/output.css --minify --watch",
-    "dev": "tsx --watch src/index.ts",
+    "dev": "tsx watch src/index.ts",
     "type-check": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
