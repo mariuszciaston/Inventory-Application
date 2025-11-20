@@ -5,4 +5,14 @@ const getAllGames = async () => {
   return result.rows;
 };
 
-export { getAllGames };
+const getAllGenres = async () => {
+  const result = await db.query("SELECT * FROM genres");
+  return result.rows;
+};
+
+const getAllPlatforms = async () => {
+  const result = await db.query("SELECT * FROM platforms");
+  return result.rows;
+};
+
+export { getAllGames, getAllGenres, getAllPlatforms };

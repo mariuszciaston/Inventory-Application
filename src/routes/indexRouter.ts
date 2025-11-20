@@ -1,9 +1,9 @@
 import { Router } from "express";
 
-import { getIndex } from "../controllers/indexController.js";
+import { renderIndexPage } from "../controllers/indexController.js";
 
 const indexRouter = Router();
 
-indexRouter.get("/", getIndex);
+indexRouter.get("/", renderIndexPage);
 
 export default indexRouter;
