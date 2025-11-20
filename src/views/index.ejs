@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('partials/head') %>
-  
   <body>
-    <h1 class="border-2 border-amber-500"><%= title %></h1>
-    <p class="text-blue-500">test</p>
-    <%- include('partials/footer') %>
-  </body>
+    <h1 class="">Games Inventory</h1>
 
+    <ul>
+      <li><a href="/">Games</a></li>
+      <li><a href="/genres">Genres</a></li>
+      <li><a href="/platforms">Platforms</a></li>
+    </ul>
+
+    <br />
+
+    <ul>
+      <% games.forEach(game => { %>
+      <li><%= game.title %></li>
+      <% }) %>
+    </ul>
+
+    <!-- <%- include('partials/footer') %> -->
+  </body>
 </html>
