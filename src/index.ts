@@ -19,6 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.use("/", indexRouter);
+app.get("/games", (_req, res) => res.redirect("/"));
 app.use("/genres", genresRouter);
 app.use("/platforms", platformsRouter);
 
