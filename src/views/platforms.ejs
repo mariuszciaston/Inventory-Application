@@ -8,7 +8,12 @@
 
     <ul>
       <% platforms.forEach(platform => { %>
-      <li><%= platform.name %></li>
+      <li>
+        <a href="/platforms/<%= platform.platform_id %>"
+          ><%= platform.name %></a
+        >
+      </li>
+
       <% }) %>
     </ul>
 

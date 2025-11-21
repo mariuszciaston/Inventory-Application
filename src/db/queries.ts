@@ -62,10 +62,38 @@ const getGamesByGenre = async (genreId: string) => {
   return result.rows;
 };
 
+const getGamesByPlatform = async (platformId: string) => {
+  const result = await db.query(
+    `SELECT
+      games.game_id,
+      games.title,
+      games.released,
+      genres.name AS genre,
+      developers.name AS developer,
+      publishers.name AS publisher,
+      ARRAY_AGG(platforms.name ORDER BY platforms.name) AS platforms
+    FROM games
+    LEFT JOIN genres ON games.genre_id = genres.genre_id
+    LEFT JOIN developers ON games.developer_id = developers.developer_id
+    LEFT JOIN publishers ON games.publisher_id = publishers.publisher_id
+    LEFT JOIN game_platforms ON games.game_id = game_platforms.game_id
+    LEFT JOIN platforms ON game_platforms.platform_id = platforms.platform_id
+    WHERE games.game_id IN (
+      SELECT game_platforms.game_id
+      FROM game_platforms
+      WHERE game_platforms.platform_id = $1
+    )
+    GROUP BY games.game_id, genres.name, developers.name, publishers.name`,
+    [platformId],
+  );
+  return result.rows;
+};
+
 export {
   getAllGames,
   getAllGenres,
   getAllPlatforms,
   getGameDetails,
   getGamesByGenre,
+  getGamesByPlatform,
 };
