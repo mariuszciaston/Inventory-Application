@@ -22,9 +22,7 @@ app.use("/", indexRouter);
 app.use("/genres", genresRouter);
 app.use("/platforms", platformsRouter);
 
-app.get("/{*splat}", (_req, res) => {
-  res.status(404).render("404", { title: "Page not found" });
-});
+app.get("/{*splat}", (_req, res) => res.status(404).render("404"));
 
 app.use(errorHandler);
 

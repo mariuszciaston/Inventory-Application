@@ -4,9 +4,11 @@
   <body>
     <%- include('partials/nav') %>
 
+    <p>All games:</p>
+
     <ul>
       <% games.forEach(game => { %>
-      <li><%= game.title %></li>
+      <li><a href="/games/<%= game.game_id %>"><%= game.title %></a></li>
       <% }) %>
     </ul>
 
