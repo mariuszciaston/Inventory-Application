@@ -6,9 +6,11 @@
 
     <p>Game details:</p>
 
+    <button type="button">Edit</button>
+    <button type="button">Delete</button>
+
     <p>
-      <%- game.title %> | <%- game.released %> | <%- game.genre %> | <%-
-      game.developer %> | <%- game.publisher %> | <%
+      <%- game.title %> | <%- game.released %> | <%- game.genre %> | <%
       game.platforms.forEach((platform, index) => { %> <%= platform %><%= index
       < game.platforms.length - 1 ? ' / ' : '' %> <% }) %>
     </p>

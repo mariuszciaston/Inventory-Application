@@ -2,22 +2,19 @@
 <html lang="en">
   <%- include('partials/head') %>
   <body>
-    <%- include('partials/nav') %> 
-    
-    <% if (games && games.length > 0) { %>
+    <%- include('partials/nav') %> <% if (games && games.length > 0) { %>
     <p><%= games[0].genre %> games:</p>
+    <button type="button">Edit</button>
+    <button type="button">Delete</button>
     <% games.forEach(game => { %>
     <p>
-      <%= game.title %> | <%= game.released %> | <%= game.genre %> | <%=
-      game.developer %> | <%= game.publisher %> | <%
+      <%= game.title %> | <%= game.released %> | <%= game.genre %> | <%
       game.platforms.forEach((platform, index) => { %> <%= platform %><%= index
       < game.platforms.length - 1 ? ' / ' : '' %> <% }) %>
     </p>
     <% }) %> <% } else { %>
     <p>No games found for this genre.</p>
-    <% } %>
-
-    <%- include('partials/goBack') %>
+    <% } %> <%- include('partials/goBack') %>
 
     <!-- <%- include('partials/footer') %> -->
   </body>
