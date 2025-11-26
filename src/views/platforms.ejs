@@ -5,7 +5,10 @@
     <%- include('partials/nav') %>
 
     <p>All platforms:</p>
-    <button type="button">Add platform</button>
+
+    <a href="/platforms/new">
+      <button type="button">Add platform</button>
+    </a>
 
     <ul>
       <% platforms.forEach(platform => { %>

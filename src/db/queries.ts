@@ -89,6 +89,10 @@ const getGamesByPlatform = async (platformId: string) => {
   return result.rows;
 };
 
+const postNewPlatform = async (name: string) => {
+  return await db.query(`INSERT INTO platforms (name) VALUES ($1)`, [name]);
+};
+
 export {
   getAllGames,
   getAllGenres,
@@ -96,4 +100,5 @@ export {
   getGameDetails,
   getGamesByGenre,
   getGamesByPlatform,
+  postNewPlatform,
 };

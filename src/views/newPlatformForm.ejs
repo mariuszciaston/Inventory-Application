@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+  <body>
+    <%- include('partials/nav') %>
+
+    <form action="/platforms/new" method="POST">
+      <p><label for="name">New platform:</label></p>
+      <input type="text" id="name" name="name" required />
+
+      <button type="submit">Create Platform</button>
+    </form>
+    <br />
+    <%- include('partials/goBack') %>
+
+    <!-- <%- include('partials/footer') %> -->
+  </body>
+</html>
