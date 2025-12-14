@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('partials/head') %>
+  <%- include('../partials/head') %>
   <body>
-    <%- include('partials/nav') %>
+    <%- include('../partials/nav') %>
 
     <form action="/platforms/<%= platform.platform_id %>/edit" method="post">
       <p><label for="name">Edit platform:</label></p>
@@ -17,8 +17,8 @@
     </form>
 
     <br />
-    <%- include('partials/goBack') %>
+    <%- include('../partials/goBack') %>
 
-    <!-- <%- include('partials/footer') %> -->
+    <!-- <%- include('../partials/footer') %> -->
   </body>
 </html>
