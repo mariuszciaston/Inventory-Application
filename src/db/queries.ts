@@ -1,19 +1,17 @@
 import * as db from "./pool.js";
 
 const getAllGames = async () => {
-  const result = await db.query("SELECT * FROM games");
+  const result = await db.query("SELECT * FROM games ORDER BY title");
   return result.rows;
 };
 
 const getAllGenres = async () => {
-  const result = await db.query("SELECT * FROM genres");
+  const result = await db.query("SELECT * FROM genres ORDER BY name");
   return result.rows;
 };
 
 const getAllPlatforms = async () => {
-  const result = await db.query(
-    "SELECT * FROM platforms ORDER BY name",
-  );
+  const result = await db.query("SELECT * FROM platforms ORDER BY name");
   return result.rows;
 };
 
@@ -25,7 +23,10 @@ const getPlatformById = async (platformId: string) => {
   return result.rows[0];
 };
 
-const updatePlatformName = async (platformId: string, newPlatformName: string) => {
+const updatePlatformName = async (
+  platformId: string,
+  newPlatformName: string,
+) => {
   return await db.query(
     `UPDATE platforms SET name = $1 WHERE platform_id = $2`,
     [newPlatformName, platformId],
@@ -73,9 +74,17 @@ const getGamesByGenre = async (genreId: string) => {
     LEFT JOIN game_platforms ON games.game_id = game_platforms.game_id
     LEFT JOIN platforms ON game_platforms.platform_id = platforms.platform_id
     WHERE genres.genre_id = $1
-    GROUP BY games.game_id, genres.name, developers.name, publishers.name`,
+    GROUP BY
+      games.game_id,
+      games.title,
+      games.released,
+      genres.name,
+      developers.name,
+      publishers.name
+    ORDER BY games.title`,
     [genreId],
   );
+
   return result.rows;
 };
 
@@ -100,7 +109,8 @@ const getGamesByPlatform = async (platformId: string) => {
       FROM game_platforms
       WHERE game_platforms.platform_id = $1
     )
-    GROUP BY games.game_id, genres.name, developers.name, publishers.name`,
+    GROUP BY games.game_id, genres.name, developers.name, publishers.name
+    ORDER BY games.title`,
     [platformId],
   );
   return result.rows;
