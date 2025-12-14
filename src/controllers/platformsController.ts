@@ -6,6 +6,7 @@ import {
   getGamesByPlatform,
   postNewPlatform,
   updatePlatformName,
+  deletePlatform,
 } from "../db/queries.js";
 
 async function renderPlatformsPage(_req: Request, res: Response) {
@@ -44,6 +45,12 @@ async function changePlatformName(req: Request, res: Response) {
   res.redirect("/platforms");
 }
 
+async function removePlatform(req: Request, res: Response) {
+  const platformId = req.params.id;
+  await deletePlatform(platformId);
+  res.redirect("/platforms");
+}
+
 export {
   renderPlatformsPage,
   renderGamesByPlatform,
@@ -51,4 +58,5 @@ export {
   submitNewPlatform,
   renderEditPlatformForm,
   changePlatformName,
+  removePlatform,
 };

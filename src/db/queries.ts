@@ -33,6 +33,15 @@ const updatePlatformName = async (
   );
 };
 
+const deletePlatform = async (platformId: string) => {
+  await db.query(`DELETE FROM game_platforms WHERE platform_id = $1`, [
+    platformId,
+  ]);
+  return await db.query(`DELETE FROM platforms WHERE platform_id = $1`, [
+    platformId,
+  ]);
+};
+
 const getGameDetails = async (gameId: string) => {
   const result = await db.query(
     `SELECT
@@ -126,6 +135,7 @@ export {
   getAllPlatforms,
   getPlatformById,
   updatePlatformName,
+  deletePlatform,
   getGameDetails,
   getGamesByGenre,
   getGamesByPlatform,

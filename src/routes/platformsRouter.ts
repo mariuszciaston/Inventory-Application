@@ -7,6 +7,7 @@ import {
   renderEditPlatformForm,
   submitNewPlatform,
   changePlatformName,
+  removePlatform,
 } from "../controllers/platformsController.js";
 
 const platformsRouter = Router();
@@ -18,7 +19,6 @@ platformsRouter.get("/:id/edit", renderEditPlatformForm);
 
 platformsRouter.post("/new", submitNewPlatform);
 platformsRouter.post("/:id/edit", changePlatformName);
-
-// platformsRouter.post("/:id/delete", deletePlatform);
+platformsRouter.post("/:id/delete", removePlatform);
 
 export default platformsRouter;
