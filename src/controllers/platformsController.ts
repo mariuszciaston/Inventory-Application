@@ -2,8 +2,10 @@ import { Request, Response } from "express";
 
 import {
   getAllPlatforms,
+  getPlatformById,
   getGamesByPlatform,
   postNewPlatform,
+  updatePlatformName,
 } from "../db/queries.js";
 
 async function renderPlatformsPage(_req: Request, res: Response) {
@@ -13,11 +15,8 @@ async function renderPlatformsPage(_req: Request, res: Response) {
 
 async function renderGamesByPlatform(req: Request, res: Response) {
   const games = await getGamesByPlatform(req.params.id);
-  const platforms = await getAllPlatforms();
-  const platform = platforms.find(
-    (p) => p.platform_id === Number(req.params.id),
-  );
-  res.render("platform", { games, platformName: platform?.name });
+  const platform = await getPlatformById(req.params.id);
+  res.render("platform", { games, platformName: platform.name, platform });
 }
 
 async function renderNewPlatformForm(_req: Request, res: Response) {
@@ -29,9 +28,23 @@ async function submitNewPlatform(req: Request, res: Response) {
   res.redirect("/platforms");
 }
 
+async function renderEditPlatformForm(req: Request, res: Response) {
+  const platform = await getPlatformById(req.params.id);
+  res.render("platformEditForm", { platform });
+}
+
+async function changePlatformName(req: Request, res: Response) {
+  const platformId = req.params.id;
+  const newPlatformName = req.body.name;
+  await updatePlatformName(platformId, newPlatformName);
+  res.redirect("/platforms");
+}
+
 export {
   renderPlatformsPage,
   renderGamesByPlatform,
   renderNewPlatformForm,
   submitNewPlatform,
+  renderEditPlatformForm,
+  changePlatformName,
 };

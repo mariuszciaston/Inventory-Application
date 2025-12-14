@@ -11,8 +11,25 @@ const getAllGenres = async () => {
 };
 
 const getAllPlatforms = async () => {
-  const result = await db.query("SELECT * FROM platforms");
+  const result = await db.query(
+    "SELECT * FROM platforms ORDER BY name",
+  );
   return result.rows;
+};
+
+const getPlatformById = async (platformId: string) => {
+  const result = await db.query(
+    `SELECT * FROM platforms WHERE platform_id = $1`,
+    [platformId],
+  );
+  return result.rows[0];
+};
+
+const updatePlatformName = async (platformId: string, newPlatformName: string) => {
+  return await db.query(
+    `UPDATE platforms SET name = $1 WHERE platform_id = $2`,
+    [newPlatformName, platformId],
+  );
 };
 
 const getGameDetails = async (gameId: string) => {
@@ -97,6 +114,8 @@ export {
   getAllGames,
   getAllGenres,
   getAllPlatforms,
+  getPlatformById,
+  updatePlatformName,
   getGameDetails,
   getGamesByGenre,
   getGamesByPlatform,

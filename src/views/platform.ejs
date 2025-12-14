@@ -5,8 +5,11 @@
     <%- include('partials/nav') %>
 
     <p><%= platformName %> platform:</p>
-    <button type="button">Edit</button>
-    <button type="button">Delete</button>
+
+    <a href="/platforms/<%= platform.platform_id %>/edit">Edit</a>
+
+    <a href="/platforms/<%= platform.platform_id %>/delete">Delete</a>
+
     <% if (games && games.length > 0) { %> <% games.forEach(game => { %>
     <p>
       <%= game.title %> | <%= game.released %> | <%= game.genre %> | <%
