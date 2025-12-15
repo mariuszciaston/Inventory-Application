@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/nav') %>
+
+    <form action="/genres/<%= genre.genre_id %>/edit" method="post">
+      <p><label for="name">Edit genre:</label></p>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value="<%= genre.name %>"
+        required
+      />
+      <button type="submit">Update</button>
+    </form>
+
+    <br />
+    <%- include('../partials/goBack') %>
+
+    <!-- <%- include('../partials/footer') %> -->
+  </body>
+</html>

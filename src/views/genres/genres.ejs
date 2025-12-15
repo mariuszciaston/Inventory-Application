@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('partials/head') %>
+  <%- include('../partials/head') %>
   <body>
-    <%- include('partials/nav') %>
+    <%- include('../partials/nav') %>
 
     <p>All genres:</p>
-    <button type="button">Add genre</button>
+
+    <a href="/genres/new">Add genre</a>
 
     <ul>
       <% genres.forEach(genre => { %>
@@ -13,6 +14,6 @@
       <% }) %>
     </ul>
 
-    <!-- <%- include('partials/footer') %> -->
+    <!-- <%- include('../partials/footer') %> -->
   </body>
 </html>

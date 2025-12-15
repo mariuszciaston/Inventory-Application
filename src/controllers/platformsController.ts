@@ -2,8 +2,8 @@ import { Request, Response } from "express";
 
 import {
   getAllPlatforms,
-  getPlatformById,
   getGamesByPlatform,
+  getPlatformById,
   postNewPlatform,
   updatePlatformName,
   deletePlatform,

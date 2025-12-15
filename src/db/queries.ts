@@ -23,6 +23,13 @@ const getPlatformById = async (platformId: string) => {
   return result.rows[0];
 };
 
+const getGenreById = async (genreId: string) => {
+  const result = await db.query(`SELECT * FROM genres WHERE genre_id = $1`, [
+    genreId,
+  ]);
+  return result.rows[0];
+};
+
 const updatePlatformName = async (
   platformId: string,
   newPlatformName: string,
@@ -33,6 +40,13 @@ const updatePlatformName = async (
   );
 };
 
+const updateGenreName = async (genreId: string, newGenreName: string) => {
+  return await db.query(`UPDATE genres SET name = $1 WHERE genre_id = $2`, [
+    newGenreName,
+    genreId,
+  ]);
+};
+
 const deletePlatform = async (platformId: string) => {
   await db.query(`DELETE FROM game_platforms WHERE platform_id = $1`, [
     platformId,
@@ -40,6 +54,13 @@ const deletePlatform = async (platformId: string) => {
   return await db.query(`DELETE FROM platforms WHERE platform_id = $1`, [
     platformId,
   ]);
+};
+
+const deleteGenre = async (genreId: string) => {
+  await db.query(`UPDATE games SET genre_id = NULL WHERE genre_id = $1`, [
+    genreId,
+  ]);
+  return await db.query(`DELETE FROM genres WHERE genre_id = $1`, [genreId]);
 };
 
 const getGameDetails = async (gameId: string) => {
@@ -129,15 +150,23 @@ const postNewPlatform = async (name: string) => {
   return await db.query(`INSERT INTO platforms (name) VALUES ($1)`, [name]);
 };
 
+const postNewGenre = async (name: string) => {
+  return await db.query(`INSERT INTO genres (name) VALUES ($1)`, [name]);
+};
+
 export {
   getAllGames,
   getAllGenres,
   getAllPlatforms,
   getPlatformById,
+  getGenreById,
   updatePlatformName,
+  updateGenreName,
   deletePlatform,
+  deleteGenre,
   getGameDetails,
   getGamesByGenre,
   getGamesByPlatform,
   postNewPlatform,
+  postNewGenre,
 };

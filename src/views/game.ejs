@@ -10,9 +10,10 @@
     <button type="button">Delete</button>
 
     <p>
-      <%- game.title %> | <%- game.released %> | <%- game.genre %> | <%
-      game.platforms.forEach((platform, index) => { %> <%= platform %><%= index
-      < game.platforms.length - 1 ? ' / ' : '' %> <% }) %>
+      <%- game.title %> | <%- game.released %> | <%- game.genre || 'Undefined genre' %> | <% const validPlatforms = game.platforms.filter(platform =>
+      platform !== null); if (validPlatforms.length === 0) { %> Undefined
+      platform <% } else { validPlatforms.forEach((platform, index) => { %><%=
+      platform %><%= index < validPlatforms.length - 1 ? ' / ' : '' %><% }) } %>
     </p>
 
     <%- include('partials/goBack') %>
