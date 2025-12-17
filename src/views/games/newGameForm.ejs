@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/nav') %>
+
+    <form action="/games/new" method="POST">
+      <p>New game:</p>
+      <p>
+        <label for="name">Title:</label>
+        <input type="text" id="name" name="name" required />
+      </p>
+
+      <p>
+        <label for="released">Released:</label>
+        <input type="number" id="released" name="released" required />
+      </p>
+
+      <p>
+        <label for="genre">Genre:</label>
+        <select name="genre" id="genre" required>
+          <option value="" disabled selected>Select genre</option>
+          <% genres.forEach(genre => { %>
+          <option value="<%= genre.genre_id %>"><%= genre.name %></option>
+
+          <% }); %>
+        </select>
+      </p>
+
+      <fieldset>
+        <legend>Platform:</legend>
+        <% platforms.forEach(platform => { %>
+        <input
+          type="checkbox"
+          name="platforms"
+          value="<%= platform.platform_id %>"
+          id="platform-<%= platform.platform_id %>"
+        />
+        <label for="platform-<%= platform.platform_id %>">
+          <%= platform.name %>
+        </label>
+        <% }); %>
+      </fieldset>
+
+      <button type="submit">Add</button>
+    </form>
+    <br />
+    <%- include('../partials/goBack') %>
+
+    <!-- <%- include('../partials/footer') %> -->
+  </body>
+</html>

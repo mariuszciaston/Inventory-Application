@@ -17,12 +17,12 @@ interface DbRow {
 }
 
 interface GameData {
-  Developer: string;
-  Genre: string;
-  Platform: string[];
-  Publisher: string;
+  Genre: number;
+  Platform: number[];
   Released: number;
   Title: string;
+  Developer: string;
+  Publisher: string;
 }
 
 const createTables = `

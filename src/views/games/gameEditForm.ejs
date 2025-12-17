@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/nav') %>
+
+    <form action="/games/<%= game.game_id %>/edit" method="post">
+      <p>Edit game:</p>
+      
+      <p>
+        <label for="name">Title:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value="<%= game.title %>"
+          required
+        />
+      </p>
+
+      <p>
+        <label for="released">Released:</label>
+        <input
+          type="number"
+          id="released"
+          name="released"
+          value="<%= game.released %>"
+          required
+        />
+      </p>
+
+      <p>
+        <label for="genre">Genre:</label>
+        <select name="genre" id="genre" required>
+          <option value="" disabled <%= !game.genre ? 'selected' : '' %>>
+            Select genre
+          </option>
+          <% genres.forEach(genre => { %>
+            <option
+              value="<%= genre.genre_id %>"
+              <%= game.genre === genre.genre_id ? 'selected' : '' %>
+            >
+              <%= genre.name %>
+            </option>
+          <% }); %>
+        </select>
+      </p>
+
+      <fieldset>
+        <legend>Platform:</legend>
+        <% platforms.forEach(platform => { %>
+          <input
+            type="checkbox"
+            name="platforms"
+            value="<%= platform.platform_id %>"
+            id="platform-<%= platform.platform_id %>"
+            <%= game.platforms && game.platforms.includes(platform.name) ? 'checked' : '' %>
+          >
+          <label for="platform-<%= platform.platform_id %>">
+            <%= platform.name %>
+          </label>
+        <% }); %>
+      </fieldset>
+
+      <button type="submit">Update</button>
+    </form>
+    
+    <br />
+    <%- include('../partials/goBack') %>
+  </body>
+</html>
