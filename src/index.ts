@@ -3,10 +3,10 @@ import express from "express";
 import path from "node:path";
 import { fileURLToPath } from "url";
 
-import indexRouter from "./routes/indexRouter.js";
-import genresRouter from "./routes/genresRouter.js";
-import platformsRouter from "./routes/platformsRouter.js";
 import errorHandler from "./middlewares/errorHandler.js";
+import genresRouter from "./routes/genresRouter.js";
+import indexRouter from "./routes/indexRouter.js";
+import platformsRouter from "./routes/platformsRouter.js";
 
 const app = express();
 
@@ -19,11 +19,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.use("/", indexRouter);
-app.get("/games", (_req, res) => res.redirect("/"));
+app.get("/games", (_req, res) => {
+  res.redirect("/");
+});
 app.use("/genres", genresRouter);
 app.use("/platforms", platformsRouter);
 
-app.get("/{*splat}", (_req, res) => res.status(404).render("404"));
+app.get("/{*splat}", (_req, res) => {
+  res.status(404).render("404");
+});
 
 app.use(errorHandler);
 

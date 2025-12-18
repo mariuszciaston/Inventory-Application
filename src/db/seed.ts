@@ -6,24 +6,9 @@ import { dirname, join } from "path";
 import { Client } from "pg";
 import { fileURLToPath } from "url";
 
+import { DbRow, GameData } from "../types/types.js";
+
 dotenv.config();
-
-interface DbRow {
-  developer_id: number;
-  game_id: number;
-  genre_id: number;
-  platform_id: number;
-  publisher_id: number;
-}
-
-interface GameData {
-  Genre: number;
-  Platform: number[];
-  Released: number;
-  Title: string;
-  Developer: string;
-  Publisher: string;
-}
 
 const createTables = `
 CREATE TABLE IF NOT EXISTS genres (
@@ -74,18 +59,18 @@ const insertData = async (client: Client) => {
   for (const game of data) {
     await client.query(
       "INSERT INTO genres (name) VALUES ($1) ON CONFLICT (name) DO NOTHING",
-      [game.Genre],
+      [game.genre],
     );
     await client.query(
       "INSERT INTO developers (name) VALUES ($1) ON CONFLICT (name) DO NOTHING",
-      [game.Developer],
+      [game.developer],
     );
     await client.query(
       "INSERT INTO publishers (name) VALUES ($1) ON CONFLICT (name) DO NOTHING",
-      [game.Publisher],
+      [game.publisher],
     );
 
-    for (const platform of game.Platform) {
+    for (const platform of game.platforms) {
       await client.query(
         "INSERT INTO platforms (name) VALUES ($1) ON CONFLICT (name) DO NOTHING",
         [platform],
@@ -94,22 +79,22 @@ const insertData = async (client: Client) => {
 
     const genreResult = await client.query(
       "SELECT genre_id FROM genres WHERE name = $1",
-      [game.Genre],
+      [game.genre],
     );
     const developerResult = await client.query(
       "SELECT developer_id FROM developers WHERE name = $1",
-      [game.Developer],
+      [game.developer],
     );
     const publisherResult = await client.query(
       "SELECT publisher_id FROM publishers WHERE name = $1",
-      [game.Publisher],
+      [game.publisher],
     );
 
     const gameResult = await client.query(
       "INSERT INTO games (title, released, genre_id, developer_id, publisher_id) VALUES ($1, $2, $3, $4, $5) ON CONFLICT (title) DO NOTHING RETURNING game_id",
       [
-        game.Title,
-        game.Released,
+        game.title,
+        game.released,
         (genreResult.rows[0] as DbRow).genre_id,
         (developerResult.rows[0] as DbRow).developer_id,
         (publisherResult.rows[0] as DbRow).publisher_id,
@@ -118,7 +103,7 @@ const insertData = async (client: Client) => {
 
     if (gameResult.rows.length > 0) {
       const gameId = (gameResult.rows[0] as DbRow).game_id;
-      for (const platform of game.Platform) {
+      for (const platform of game.platforms) {
         const platformResult = await client.query(
           "SELECT platform_id FROM platforms WHERE name = $1",
           [platform],

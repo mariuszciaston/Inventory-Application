@@ -1,13 +1,13 @@
 import { Router } from "express";
 
 import {
-  renderIndexPage,
-  renderNewGameForm,
-  renderGamePage,
-  renderEditGameForm,
-  submitNewGame,
   changeGameDetails,
   removeGame,
+  renderEditGameForm,
+  renderGamePage,
+  renderIndexPage,
+  renderNewGameForm,
+  submitNewGame,
 } from "../controllers/indexController.js";
 
 const indexRouter = Router();

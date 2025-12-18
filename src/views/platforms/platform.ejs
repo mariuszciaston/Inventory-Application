@@ -4,7 +4,7 @@
   <body>
     <%- include('../partials/nav') %>
 
-    <p><%= platformName %> platform:</p>
+    <p><%= platform.name %> platform:</p>
 
     <a href="/platforms/<%= platform.platform_id %>/edit">Edit</a>
 
@@ -23,8 +23,10 @@
 
     <% if (games && games.length > 0) { %> <% games.forEach(game => { %>
     <p>
-      <%= game.title %> | <%= game.released %> | <%= game.genre || 'Undefined genre' %> | <% game.platforms.forEach((platform, index) => { %> <%=
-      platform %><%= index < game.platforms.length - 1 ? ' / ' : '' %> <% }) %>
+      <%= game.title %> | <%= game.released %> | <%= game.genre ||
+      'Undefined&nbspgenre' %> | <% game.platforms.forEach((platform, index) =>
+      { %> <%= platform %><%= index < game.platforms.length - 1 ? ' / ' : '' %>
+      <% }) %>
     </p>
     <% }) %> <% } else { %>
     <p>No games found for this platform.</p>

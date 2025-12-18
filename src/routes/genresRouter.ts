@@ -1,13 +1,13 @@
 import { Router } from "express";
 
 import {
-  renderGenresPage,
-  renderGamesByGenre,
-  renderNewGenreForm,
-  renderEditGenreForm,
-  submitNewGenre,
   changeGenreName,
   removeGenre,
+  renderEditGenreForm,
+  renderGamesByGenre,
+  renderGenresPage,
+  renderNewGenreForm,
+  submitNewGenre,
 } from "../controllers/genresController.js";
 
 const genresRouter = Router();

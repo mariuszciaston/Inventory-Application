@@ -1,13 +1,13 @@
 import { Router } from "express";
 
 import {
-  renderPlatformsPage,
-  renderNewPlatformForm,
-  renderGamesByPlatform,
-  renderEditPlatformForm,
-  submitNewPlatform,
   changePlatformName,
   removePlatform,
+  renderEditPlatformForm,
+  renderGamesByPlatform,
+  renderNewPlatformForm,
+  renderPlatformsPage,
+  submitNewPlatform,
 } from "../controllers/platformsController.js";
 
 const platformsRouter = Router();
