@@ -6,7 +6,16 @@
 
     <form action="/genres/new" method="POST">
       <p><label for="name">New genre:</label></p>
-      <input type="text" id="name" name="name" required />
+
+      <%- include('../partials/showError') %>
+
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value="<%= genre.name %>"
+        required
+      />
 
       <button type="submit">Add</button>
     </form>

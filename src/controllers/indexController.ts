@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { validationResult } from "express-validator";
 
-import type { AdminPassword, GameData } from "../types/types.js";
+import type { GameData } from "../types/types.js";
 
 import {
   deleteGame,
@@ -14,15 +14,6 @@ import {
 } from "../db/queries.js";
 
 async function changeGameDetails(req: Request, res: Response) {
-  const { adminPassword } = req.body as AdminPassword;
-  if (!adminPassword || adminPassword !== process.env.ADMIN_PASSWORD) {
-    return res
-      .status(401)
-      .send(
-        "<script>alert('Invalid admin password'); window.history.back();</script>",
-      );
-  }
-
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
@@ -55,15 +46,6 @@ async function changeGameDetails(req: Request, res: Response) {
 }
 
 async function removeGame(req: Request, res: Response) {
-  const { adminPassword } = req.body as AdminPassword;
-  if (!adminPassword || adminPassword !== process.env.ADMIN_PASSWORD) {
-    return res
-      .status(401)
-      .send(
-        "<script>alert('Invalid admin password'); window.history.back();</script>",
-      );
-  }
-
   await deleteGame(req.params.id);
   res.redirect("/");
 }

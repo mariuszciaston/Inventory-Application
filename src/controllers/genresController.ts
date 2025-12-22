@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
+import { validationResult } from "express-validator";
 
-import type { AdminPassword, GameData } from "../types/types.js";
+import type { GameData } from "../types/types.js";
 
 import {
   deleteGenre,
@@ -12,13 +13,14 @@ import {
 } from "../db/queries.js";
 
 async function changeGenreName(req: Request, res: Response) {
-  const { adminPassword } = req.body as AdminPassword;
-  if (!adminPassword || adminPassword !== process.env.ADMIN_PASSWORD) {
-    return res
-      .status(401)
-      .send(
-        "<script>alert('Invalid admin password'); window.history.back();</script>",
-      );
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    const genre = await getGenreById(req.params.id);
+    res.render("genres/genreEditForm", {
+      errors: errors.array(),
+      genre: { genre, name: (req.body as GameData).name },
+    });
+    return;
   }
 
   const genreId = req.params.id;
@@ -28,15 +30,6 @@ async function changeGenreName(req: Request, res: Response) {
 }
 
 async function removeGenre(req: Request, res: Response) {
-  const { adminPassword } = req.body as AdminPassword;
-  if (!adminPassword || adminPassword !== process.env.ADMIN_PASSWORD) {
-    return res
-      .status(401)
-      .send(
-        "<script>alert('Invalid admin password'); window.history.back();</script>",
-      );
-  }
-
   const genreId = req.params.id;
   await deleteGenre(genreId);
   res.redirect("/genres");
@@ -59,10 +52,21 @@ async function renderGenresPage(_req: Request, res: Response) {
 }
 
 function renderNewGenreForm(_req: Request, res: Response) {
-  res.render("genres/newGenreForm");
+  res.render("genres/newGenreForm", { genre: { name: "" } });
 }
 
 async function submitNewGenre(req: Request, res: Response) {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    res.render("genres/newGenreForm", {
+      errors: errors.array(),
+      genre: {
+        genre: { name: (req.body as GameData).name },
+        name: (req.body as GameData).name,
+      },
+    });
+    return;
+  }
   await postNewGenre((req.body as GameData).name);
   res.redirect("/genres");
 }

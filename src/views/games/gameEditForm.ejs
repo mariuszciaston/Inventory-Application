@@ -7,13 +7,7 @@
     <form action="/games/<%= game.game_id %>/edit" method="post" onsubmit="return handleEditAction(this)">
       <p>Edit game:</p>
       
-          <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
-      <div class="errors">
-        <% errors.forEach(error => { %>
-          <p style="color: red;"><%= error.msg %></p>
-        <% }); %>
-      </div>
-    <% } %>
+      <%- include('../partials/showError') %>
 
       <p>
         <label for="title">Title:</label>

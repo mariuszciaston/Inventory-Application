@@ -9,6 +9,8 @@ import {
   renderNewGenreForm,
   submitNewGenre,
 } from "../controllers/genresController.js";
+import verifyAdminPassword from "../middlewares/adminAuth.js";
+import { validateName } from "../middlewares/validator.js";
 
 const genresRouter = Router();
 
@@ -17,8 +19,13 @@ genresRouter.get("/new", renderNewGenreForm);
 genresRouter.get("/:id", renderGamesByGenre);
 genresRouter.get("/:id/edit", renderEditGenreForm);
 
-genresRouter.post("/new", submitNewGenre);
-genresRouter.post("/:id/edit", changeGenreName);
-genresRouter.post("/:id/delete", removeGenre);
+genresRouter.post("/new", validateName, submitNewGenre);
+genresRouter.post(
+  "/:id/edit",
+  validateName,
+  verifyAdminPassword,
+  changeGenreName,
+);
+genresRouter.post("/:id/delete", verifyAdminPassword, removeGenre);
 
 export default genresRouter;

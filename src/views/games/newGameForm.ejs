@@ -7,13 +7,7 @@
     <form action="/games/new" method="POST">
       <p>New game:</p>
 
-    <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
-      <div class="errors">
-        <% errors.forEach(error => { %>
-          <p style="color: red;"><%= error.msg %></p>
-        <% }); %>
-      </div>
-    <% } %>
+      <%- include('../partials/showError') %>
 
       <p>
         <label for="title">Title:</label>

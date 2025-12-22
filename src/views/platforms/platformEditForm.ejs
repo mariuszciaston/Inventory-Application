@@ -10,6 +10,9 @@
       onsubmit="return handleEditAction(this)"
     >
       <p><label for="name">Edit platform:</label></p>
+
+      <%- include('../partials/showError') %>
+
       <input
         type="text"
         id="name"

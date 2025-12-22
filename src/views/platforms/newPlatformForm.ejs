@@ -6,7 +6,16 @@
 
     <form action="/platforms/new" method="POST">
       <p><label for="name">New platform:</label></p>
-      <input type="text" id="name" name="name" required />
+
+      <%- include('../partials/showError') %>
+
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value="<%= platform.name %>"
+        required
+      />
 
       <button type="submit">Add</button>
     </form>

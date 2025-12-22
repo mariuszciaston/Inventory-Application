@@ -9,7 +9,8 @@ import {
   renderNewGameForm,
   submitNewGame,
 } from "../controllers/indexController.js";
-import { validate } from "../middlewares/validator.js";
+import verifyAdminPassword from "../middlewares/adminAuth.js";
+import { validateGame } from "../middlewares/validator.js";
 
 const indexRouter = Router();
 
@@ -18,8 +19,13 @@ indexRouter.get("/new", renderNewGameForm);
 indexRouter.get("/games/:id", renderGamePage);
 indexRouter.get("/games/:id/edit", renderEditGameForm);
 
-indexRouter.post("/games/new", validate, submitNewGame);
-indexRouter.post("/games/:id/edit", validate, changeGameDetails);
-indexRouter.post("/games/:id/delete", removeGame);
+indexRouter.post("/games/new", validateGame, submitNewGame);
+indexRouter.post(
+  "/games/:id/edit",
+  verifyAdminPassword,
+  validateGame,
+  changeGameDetails,
+);
+indexRouter.post("/games/:id/delete", verifyAdminPassword, removeGame);
 
 export default indexRouter;

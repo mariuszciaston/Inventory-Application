@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
+import { validationResult } from "express-validator";
 
-import type { AdminPassword, GameData } from "../types/types.js";
+import type { GameData } from "../types/types.js";
 
 import {
   deletePlatform,
@@ -12,15 +13,18 @@ import {
 } from "../db/queries.js";
 
 async function changePlatformName(req: Request, res: Response) {
-  const { adminPassword } = req.body as AdminPassword;
-  if (!adminPassword || adminPassword !== process.env.ADMIN_PASSWORD) {
-    return res
-      .status(401)
-      .send(
-        "<script>alert('Invalid admin password'); window.history.back();</script>",
-      );
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    const platform = await getPlatformById(req.params.id);
+    res.render("platforms/platformEditForm", {
+      errors: errors.array(),
+      platform: {
+        name: (req.body as GameData).name,
+        platform: { name: (req.body as GameData).name, platform },
+      },
+    });
+    return;
   }
-
   const platformId = req.params.id;
   const newPlatformName = (req.body as GameData).name;
   await updatePlatformName(platformId, newPlatformName);
@@ -28,15 +32,6 @@ async function changePlatformName(req: Request, res: Response) {
 }
 
 async function removePlatform(req: Request, res: Response) {
-  const { adminPassword } = req.body as AdminPassword;
-  if (!adminPassword || adminPassword !== process.env.ADMIN_PASSWORD) {
-    return res
-      .status(401)
-      .send(
-        "<script>alert('Invalid admin password'); window.history.back();</script>",
-      );
-  }
-
   const platformId = req.params.id;
   await deletePlatform(platformId);
   res.redirect("/platforms");
@@ -57,7 +52,7 @@ async function renderGamesByPlatform(req: Request, res: Response) {
 }
 
 function renderNewPlatformForm(_req: Request, res: Response) {
-  res.render("platforms/newPlatformForm");
+  res.render("platforms/newPlatformForm", { platform: { name: "" } });
 }
 
 async function renderPlatformsPage(_req: Request, res: Response) {
@@ -66,6 +61,19 @@ async function renderPlatformsPage(_req: Request, res: Response) {
 }
 
 async function submitNewPlatform(req: Request, res: Response) {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    const platform = await getPlatformById(req.params.id);
+
+    res.render("platforms/newPlatformForm", {
+      errors: errors.array(),
+      platform: {
+        name: (req.body as GameData).name,
+        platform: { name: (req.body as GameData).name, platform },
+      },
+    });
+    return;
+  }
   await postNewPlatform((req.body as GameData).name);
   res.redirect("/platforms");
 }

@@ -1,6 +1,6 @@
 import { body } from "express-validator";
 
-const validate = [
+const validateGame = [
   body("title")
     .trim()
     .notEmpty()
@@ -17,4 +17,13 @@ const validate = [
     .toInt(),
 ];
 
-export { validate };
+const validateName = [
+  body("name")
+    .trim()
+    .notEmpty()
+    .withMessage("Name is required")
+    .isLength({ max: 50, min: 1 })
+    .withMessage(`Name must be between 1 and 50 characters.`),
+];
+
+export { validateGame, validateName };
