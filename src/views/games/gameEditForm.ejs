@@ -7,13 +7,21 @@
     <form action="/games/<%= game.game_id %>/edit" method="post">
       <p>Edit game:</p>
       
+          <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+      <div class="errors">
+        <% errors.forEach(error => { %>
+          <p style="color: red;"><%= error.msg %></p>
+        <% }); %>
+      </div>
+    <% } %>
+
       <p>
         <label for="title">Title:</label>
         <input
           type="text"
           id="title"
           name="title"
-          value="<%= game.title %>"
+          value="<%= typeof title !== 'undefined' ? title : game.title %>"
           required
         />
       </p>
@@ -24,23 +32,23 @@
           type="number"
           id="released"
           name="released"
-          value="<%= game.released %>"
+          value="<%= typeof released !== 'undefined' ? released : game.released %>"
           required
         />
       </p>
 
       <p>
         <label for="genre">Genre:</label>
-        <select name="genre" id="genre" required>
-          <option value="" disabled <%= !game.genre ? 'selected' : '' %>>
+        <select name="genre" id="genre">
+          <option value="" disabled <%= (typeof genre !== 'undefined' ? !genre : !game.genre) ? 'selected' : '' %>>
             Select genre
           </option>
-          <% genres.forEach(genre => { %>
+          <% genres.forEach(genreItem => { %>
             <option
-              value="<%= genre.genre_id %>"
-              <%= game.genre === genre.genre_id ? 'selected' : '' %>
+              value="<%= genreItem.genre_id %>"
+              <%= (typeof genre !== 'undefined' ? genre == genreItem.genre_id : game.genre === genreItem.genre_id) ? 'selected' : '' %>
             >
-              <%= genre.name %>
+              <%= genreItem.name %>
             </option>
           <% }); %>
         </select>
@@ -54,7 +62,7 @@
             name="platforms"
             value="<%= platform.platform_id %>"
             id="platform-<%= platform.platform_id %>"
-            <%= game.platforms && game.platforms.includes(platform.name) ? 'checked' : '' %>
+            <%= (typeof selectedPlatforms !== 'undefined' ? (Array.isArray(selectedPlatforms) ? selectedPlatforms.includes(platform.platform_id.toString()) : selectedPlatforms == platform.platform_id) : (game.platforms && game.platforms.includes(platform.name))) ? 'checked' : '' %>
           >
           <label for="platform-<%= platform.platform_id %>">
             <%= platform.name %>

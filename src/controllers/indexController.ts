@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { validationResult } from "express-validator";
 
 import type { GameData } from "../types/types.js";
 
@@ -13,11 +14,35 @@ import {
 } from "../db/queries.js";
 
 async function changeGameDetails(req: Request, res: Response) {
-  const { genre, platforms, released, title } = req.body as GameData;
-  const platformsArray = Array.isArray(platforms) ? platforms : [platforms];
-  const gameId = req.params.id;
-  await updateGameDetails(title, released, genre, platformsArray, gameId);
-  res.redirect("/");
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    const genres = await getAllGenres();
+    const platforms = await getAllPlatforms();
+    const {
+      genre,
+      platforms: selectedPlatforms,
+      released,
+      title,
+    } = req.body as GameData;
+
+    res.status(400).render("games/gameEditForm", {
+      errors: errors.array(),
+      game: { game_id: req.params.id },
+      genre,
+      genres,
+      platforms,
+      released,
+      selectedPlatforms,
+      title,
+    });
+  } else {
+    const { genre, platforms, released, title } = req.body as GameData;
+    const platformsArray = Array.isArray(platforms) ? platforms : [platforms];
+    const gameId = req.params.id;
+    await updateGameDetails(title, released, genre, platformsArray, gameId);
+    res.redirect("/");
+  }
 }
 
 async function removeGame(req: Request, res: Response) {
@@ -51,10 +76,34 @@ async function renderNewGameForm(req: Request, res: Response) {
 }
 
 async function submitNewGame(req: Request, res: Response) {
-  const { genre, platforms, released, title } = req.body as GameData;
-  const platformsArray = Array.isArray(platforms) ? platforms : [platforms];
-  await postNewGame(title, released, genre, platformsArray);
-  res.redirect("/");
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    const genres = await getAllGenres();
+    const platforms = await getAllPlatforms();
+    const {
+      genre,
+      platforms: selectedPlatforms,
+      released,
+      title,
+    } = req.body as GameData;
+
+    res.status(400).render("games/newGameForm", {
+      errors: errors.array(),
+      genre,
+      genres,
+      platforms,
+      released,
+      selectedPlatforms,
+      title,
+    });
+  } else {
+    const { genre, platforms, released, title } = req.body as GameData;
+    const platformsArray = Array.isArray(platforms) ? platforms : [platforms];
+    await postNewGame(title, released, genre, platformsArray);
+
+    res.redirect("/");
+  }
 }
 
 export {

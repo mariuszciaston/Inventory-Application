@@ -1,19 +1,20 @@
-// import { body } from "express-validator";
+import { body } from "express-validator";
 
-// const validateMessage = [
-//   body("author")
-//     .trim()
-//     .isAlpha("pl-PL", { ignore: " -'" })
-//     .withMessage(`Name must only contain letters.`)
-//     .isLength({ max: 50, min: 1 })
-//     .withMessage(`Name must be between 1 and 50 characters.`)
-//     .escape(),
+const validate = [
+  body("title")
+    .trim()
+    .notEmpty()
+    .withMessage("Title is required")
+    .isLength({ max: 50, min: 1 })
+    .withMessage(`Title must be between 1 and 50 characters.`),
 
-//   body("text")
-//     .trim()
-//     .isLength({ max: 255, min: 2 })
-//     .withMessage("Message must be between 2 and 255 characters.")
-//     .escape(),
-// ];
+  body("released")
+    .trim()
+    .notEmpty()
+    .withMessage("Release year is required")
+    .isInt({ max: 2050, min: 1950 })
+    .withMessage("Release year must be between 1950 and 2050")
+    .toInt(),
+];
 
-// export { validateMessage };
+export { validate };
