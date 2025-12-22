@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import type { GameData } from "../types/types.js";
+import type { AdminPassword, GameData } from "../types/types.js";
 
 import {
   deletePlatform,
@@ -12,6 +12,15 @@ import {
 } from "../db/queries.js";
 
 async function changePlatformName(req: Request, res: Response) {
+  const { adminPassword } = req.body as AdminPassword;
+  if (!adminPassword || adminPassword !== process.env.ADMIN_PASSWORD) {
+    return res
+      .status(401)
+      .send(
+        "<script>alert('Invalid admin password'); window.history.back();</script>",
+      );
+  }
+
   const platformId = req.params.id;
   const newPlatformName = (req.body as GameData).name;
   await updatePlatformName(platformId, newPlatformName);
@@ -19,6 +28,15 @@ async function changePlatformName(req: Request, res: Response) {
 }
 
 async function removePlatform(req: Request, res: Response) {
+  const { adminPassword } = req.body as AdminPassword;
+  if (!adminPassword || adminPassword !== process.env.ADMIN_PASSWORD) {
+    return res
+      .status(401)
+      .send(
+        "<script>alert('Invalid admin password'); window.history.back();</script>",
+      );
+  }
+
   const platformId = req.params.id;
   await deletePlatform(platformId);
   res.redirect("/platforms");

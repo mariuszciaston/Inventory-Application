@@ -1,3 +1,7 @@
+interface AdminPassword {
+  adminPassword: string;
+}
+
 interface DbRow {
   developer_id: number;
   game_id: number;
@@ -16,4 +20,4 @@ interface GameData {
   title: string;
 }
 
-export { DbRow, GameData };
+export { AdminPassword, DbRow, GameData };

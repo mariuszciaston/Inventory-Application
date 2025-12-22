@@ -4,7 +4,11 @@
   <body>
     <%- include('../partials/nav') %>
 
-    <form action="/platforms/<%= platform.platform_id %>/edit" method="post">
+    <form
+      action="/platforms/<%= platform.platform_id %>/edit"
+      method="post"
+      onsubmit="return handleEditAction(this)"
+    >
       <p><label for="name">Edit platform:</label></p>
       <input
         type="text"
@@ -13,8 +17,11 @@
         value="<%= platform.name %>"
         required
       />
+      <input type="hidden" name="adminPassword" id="adminPasswordField" />
       <button type="submit">Update</button>
     </form>
+
+    <script src="/admin.js"></script>
 
     <br />
     <%- include('../partials/goBack') %>
