@@ -1,162 +1,162 @@
 [
   {
-    "Title": "Heroes of Might and Magic II",
-    "Genre": "Turn-based strategy",
-    "Released": 1996,
-    "Developer": "New World Computing",
-    "Publisher": "The 3DO Company",
-    "Platform": ["DOS", "Windows", "Mac OS"]
+    "title": "Heroes of Might and Magic II",
+    "genre": "Turn-based strategy",
+    "released": 1996,
+    "developer": "New World Computing",
+    "publisher": "The 3DO Company",
+    "platforms": ["DOS", "Windows", "Mac OS"]
   },
   {
-    "Title": "Heroes of Might and Magic III",
-    "Genre": "Turn-based strategy",
-    "Released": 1999,
-    "Developer": "New World Computing",
-    "Publisher": "The 3DO Company",
-    "Platform": ["Windows", "Mac OS", "Linux"]
+    "title": "Heroes of Might and Magic III",
+    "genre": "Turn-based strategy",
+    "released": 1999,
+    "developer": "New World Computing",
+    "publisher": "The 3DO Company",
+    "platforms": ["Windows", "Mac OS", "Linux"]
   },
   {
-    "Title": "Age of Empires",
-    "Genre": "Real-time strategy",
-    "Released": 1997,
-    "Developer": "Ensemble Studios",
-    "Publisher": "Microsoft",
-    "Platform": ["Windows"]
+    "title": "Age of Empires",
+    "genre": "Real-time strategy",
+    "released": 1997,
+    "developer": "Ensemble Studios",
+    "publisher": "Microsoft",
+    "platforms": ["Windows"]
   },
   {
-    "Title": "Age of Empires II",
-    "Genre": "Real-time strategy",
-    "Released": 1999,
-    "Developer": "Ensemble Studios",
-    "Publisher": "Microsoft",
-    "Platform": ["Windows", "Mac OS", "PlayStation 2"]
+    "title": "Age of Empires II",
+    "genre": "Real-time strategy",
+    "released": 1999,
+    "developer": "Ensemble Studios",
+    "publisher": "Microsoft",
+    "platforms": ["Windows", "Mac OS", "PlayStation 2"]
   },
   {
-    "Title": "Populous: The Beginning",
-    "Genre": "Real-time strategy",
-    "Released": 1998,
-    "Developer": "Bullfrog Productions",
-    "Publisher": "Electronic Arts",
-    "Platform": ["Windows", "PlayStation"]
+    "title": "Populous: The Beginning",
+    "genre": "Real-time strategy",
+    "released": 1998,
+    "developer": "Bullfrog Productions",
+    "publisher": "Electronic Arts",
+    "platforms": ["Windows", "PlayStation"]
   },
   {
-    "Title": "Dark Colony",
-    "Genre": "Real-time strategy",
-    "Released": 1997,
-    "Developer": "Alternative Reality Technologies",
-    "Publisher": "Take-Two Interactive",
-    "Platform": ["Windows", "Mac OS"]
+    "title": "Dark Colony",
+    "genre": "Real-time strategy",
+    "released": 1997,
+    "developer": "Alternative Reality Technologies",
+    "publisher": "Take-Two Interactive",
+    "platforms": ["Windows", "Mac OS"]
   },
   {
-    "Title": "Settlers II",
-    "Genre": "Real-time strategy",
-    "Released": 1996,
-    "Developer": "Blue Byte",
-    "Publisher": "Blue Byte",
-    "Platform": ["DOS", "Windows", "Mac OS"]
+    "title": "Settlers II",
+    "genre": "Real-time strategy",
+    "released": 1996,
+    "developer": "Blue Byte",
+    "publisher": "Blue Byte",
+    "platforms": ["DOS", "Windows", "Mac OS"]
   },
   {
-    "Title": "Settlers III",
-    "Genre": "Real-time strategy",
-    "Released": 1998,
-    "Developer": "Blue Byte",
-    "Publisher": "Blue Byte",
-    "Platform": ["Windows"]
+    "title": "Settlers III",
+    "genre": "Real-time strategy",
+    "released": 1998,
+    "developer": "Blue Byte",
+    "publisher": "Blue Byte",
+    "platforms": ["Windows"]
   },
   {
-    "Title": "Warcraft III",
-    "Genre": "Real-time strategy",
-    "Released": 2002,
-    "Developer": "Blizzard Entertainment",
-    "Publisher": "Blizzard Entertainment",
-    "Platform": ["Windows", "Mac OS"]
+    "title": "Warcraft III",
+    "genre": "Real-time strategy",
+    "released": 2002,
+    "developer": "Blizzard Entertainment",
+    "publisher": "Blizzard Entertainment",
+    "platforms": ["Windows", "Mac OS"]
   },
   {
-    "Title": "StarCraft",
-    "Genre": "Real-time strategy",
-    "Released": 1998,
-    "Developer": "Blizzard Entertainment",
-    "Publisher": "Blizzard Entertainment",
-    "Platform": ["Windows", "Mac OS"]
+    "title": "StarCraft",
+    "genre": "Real-time strategy",
+    "released": 1998,
+    "developer": "Blizzard Entertainment",
+    "publisher": "Blizzard Entertainment",
+    "platforms": ["Windows", "Mac OS"]
   },
   {
-    "Title": "StarCraft II",
-    "Genre": "Real-time strategy",
-    "Released": 2010,
-    "Developer": "Blizzard Entertainment",
-    "Publisher": "Blizzard Entertainment",
-    "Platform": ["Windows", "Mac OS"]
+    "title": "StarCraft II",
+    "genre": "Real-time strategy",
+    "released": 2010,
+    "developer": "Blizzard Entertainment",
+    "publisher": "Blizzard Entertainment",
+    "platforms": ["Windows", "Mac OS"]
   },
   {
-    "Title": "Diablo",
-    "Genre": "Action role-playing",
-    "Released": 1998,
-    "Developer": "Blizzard North",
-    "Publisher": "Blizzard Entertainment",
-    "Platform": ["Windows", "Mac OS"]
+    "title": "Diablo",
+    "genre": "Action role-playing",
+    "released": 1998,
+    "developer": "Blizzard North",
+    "publisher": "Blizzard Entertainment",
+    "platforms": ["Windows", "Mac OS"]
   },
   {
-    "Title": "Diablo II",
-    "Genre": "Action role-playing",
-    "Released": 2000,
-    "Developer": "Blizzard North",
-    "Publisher": "Blizzard Entertainment",
-    "Platform": ["Windows", "Mac OS"]
+    "title": "Diablo II",
+    "genre": "Action role-playing",
+    "released": 2000,
+    "developer": "Blizzard North",
+    "publisher": "Blizzard Entertainment",
+    "platforms": ["Windows", "Mac OS"]
   },
   {
-    "Title": "Fallout",
-    "Genre": "Role-playing",
-    "Released": 1997,
-    "Developer": "Interplay Productions",
-    "Publisher": "Interplay Productions",
-    "Platform": ["Windows", "PlayStation"]
+    "title": "Fallout",
+    "genre": "Role-playing",
+    "released": 1997,
+    "developer": "Interplay Productions",
+    "publisher": "Interplay Productions",
+    "platforms": ["Windows", "PlayStation"]
   },
   {
-    "Title": "Fallout 2",
-    "Genre": "Role-playing",
-    "Released": 1998,
-    "Developer": "Black Isle Studios",
-    "Publisher": "Interplay Productions",
-    "Platform": ["Windows"]
+    "title": "Fallout 2",
+    "genre": "Role-playing",
+    "released": 1998,
+    "developer": "Black Isle Studios",
+    "publisher": "Interplay Productions",
+    "platforms": ["Windows"]
   },
   {
-    "Title": "Gorky 17",
-    "Genre": "Tactical role-playing",
-    "Released": 1999,
-    "Developer": "Metropolis Software",
-    "Publisher": "Monolith Productions",
-    "Platform": ["Windows"]
+    "title": "Gorky 17",
+    "genre": "Tactical role-playing",
+    "released": 1999,
+    "developer": "Metropolis Software",
+    "publisher": "Monolith Productions",
+    "platforms": ["Windows"]
   },
   {
-    "Title": "The Neverhood",
-    "Genre": "Point-and-click adventure",
-    "Released": 1996,
-    "Developer": "The Neverhood, Inc.",
-    "Publisher": "DreamWorks Interactive",
-    "Platform": ["Windows", "Mac OS"]
+    "title": "The Neverhood",
+    "genre": "Point-and-click adventure",
+    "released": 1996,
+    "developer": "The Neverhood, Inc.",
+    "publisher": "DreamWorks Interactive",
+    "platforms": ["Windows", "Mac OS"]
   },
   {
-    "Title": "Oddworld: Abe’s Oddysee",
-    "Genre": "Platformer",
-    "Released": 1997,
-    "Developer": "Oddworld Inhabitants",
-    "Publisher": "GT Interactive",
-    "Platform": ["PlayStation", "Windows"]
+    "title": "Oddworld: Abe's Oddysee",
+    "genre": "Platformer",
+    "released": 1997,
+    "developer": "Oddworld Inhabitants",
+    "publisher": "GT Interactive",
+    "platforms": ["PlayStation", "Windows"]
   },
   {
-    "Title": "Oddworld: Abe’s Exoddus",
-    "Genre": "Platformer",
-    "Released": 1998,
-    "Developer": "Oddworld Inhabitants",
-    "Publisher": "GT Interactive",
-    "Platform": ["PlayStation", "Windows"]
+    "title": "Oddworld: Abe's Exoddus",
+    "genre": "Platformer",
+    "released": 1998,
+    "developer": "Oddworld Inhabitants",
+    "publisher": "GT Interactive",
+    "platforms": ["PlayStation", "Windows"]
   },
   {
-    "Title": "Tekken 3",
-    "Genre": "Fighting",
-    "Released": 1997,
-    "Developer": "Namco",
-    "Publisher": "Namco",
-    "Platform": ["Arcade", "PlayStation"]
+    "title": "Tekken 3",
+    "genre": "Fighting",
+    "released": 1997,
+    "developer": "Namco",
+    "publisher": "Namco",
+    "platforms": ["Arcade", "PlayStation"]
   }
 ]
