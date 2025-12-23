@@ -10,7 +10,13 @@
 
     <ul>
       <% games.forEach(game => { %>
-      <li><a href="/games/<%= game.game_id %>"><%= game.title %></a></li>
+      <li>
+        <a href="/games/<%= game.game_id %>">
+          <img src="<%= game.image %>" alt="<%= game.title %>" />
+
+          <%= game.title %>
+        </a>
+      </li>
       <% }) %>
     </ul>
 

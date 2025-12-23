@@ -13,6 +13,7 @@ interface DbRow {
 interface GameData {
   developer: string;
   genre: string;
+  image: string;
   name: string;
   platforms: number[];
   publisher: string;

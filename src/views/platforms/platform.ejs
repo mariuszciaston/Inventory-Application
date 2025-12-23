@@ -22,6 +22,8 @@
 
     <% if (games && games.length > 0) { %> <% games.forEach(game => { %>
     <p>
+      <img src="/<%= game.image %>" alt="<%= game.title %>" />
+
       <%= game.title %> | <%= game.released %> | <%= game.genre ||
       'Undefined&nbspgenre' %> | <% game.platforms.forEach((platform, index) =>
       { %> <%= platform %><%= index < game.platforms.length - 1 ? ' / ' : '' %>

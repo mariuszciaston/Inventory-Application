@@ -38,7 +38,8 @@ CREATE TABLE IF NOT EXISTS games (
   genre_id INTEGER REFERENCES genres(genre_id),
   developer_id INTEGER REFERENCES developers(developer_id),
   publisher_id INTEGER REFERENCES publishers(publisher_id),
-  platform_id INTEGER REFERENCES platforms(platform_id)
+  platform_id INTEGER REFERENCES platforms(platform_id),
+  image VARCHAR(255)
 );
 
 CREATE TABLE IF NOT EXISTS game_platforms (
@@ -91,13 +92,14 @@ const insertData = async (client: Client) => {
     );
 
     const gameResult = await client.query(
-      "INSERT INTO games (title, released, genre_id, developer_id, publisher_id) VALUES ($1, $2, $3, $4, $5) ON CONFLICT (title) DO NOTHING RETURNING game_id",
+      "INSERT INTO games (title, released, genre_id, developer_id, publisher_id, image) VALUES ($1, $2, $3, $4, $5, $6) ON CONFLICT (title) DO NOTHING RETURNING game_id",
       [
         game.title,
         game.released,
         (genreResult.rows[0] as DbRow).genre_id,
         (developerResult.rows[0] as DbRow).developer_id,
         (publisherResult.rows[0] as DbRow).publisher_id,
+        game.image,
       ],
     );
 

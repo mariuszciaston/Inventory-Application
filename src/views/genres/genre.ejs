@@ -22,6 +22,8 @@
 
     <% if (games && games.length > 0) { %> <% games.forEach(game => { %>
     <p>
+      <img src="/<%= game.image %>" alt="<%= game.title %>" />
+
       <%= game.title %> | <%= game.released %> | <%= game.genre %> | <% const
       validPlatforms = game.platforms.filter(platform => platform !== null); if
       (validPlatforms.length === 0) { %> Undefined platform <% } else {
