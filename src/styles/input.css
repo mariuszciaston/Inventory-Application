@@ -1,15 +1,15 @@
-/* @import "tailwindcss"; */
+@import "tailwindcss";
 
 /* body {
   font-family: "Segoe UI", "Noto Sans";
 } */
 
-/* #footer {
+#footer {
   font-size: 0.875rem;
   padding: 1rem;
   display: flex;
   justify-content: center;
-  color: white;
+  color: black;
 }
 
 #signature {
@@ -20,7 +20,7 @@
 }
 
 .fa-github {
-  color: white;
+  color: black;
   opacity: 0.75;
   transition: transform 0.5s ease-in-out;
 }
@@ -28,4 +28,4 @@
 .fa-github:hover {
   opacity: 100%;
   transform: rotate(360deg) scale(1.2);
-} */
+}
