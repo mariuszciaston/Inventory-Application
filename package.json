@@ -7,9 +7,9 @@
     "node": "22.20.0"
   },
   "scripts": {
-    "local-db-start": "sudo service postgresql start",
     "tailwind:watch": "npx @tailwindcss/cli -i src/styles/input.css -o public/output.css --minify --watch",
     "dev": "tsx watch src/index.ts",
+    "local-db-start": "sudo service postgresql start",
     "type-check": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
