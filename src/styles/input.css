@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
-/* body {
-  font-family: "Segoe UI", "Noto Sans";
-} */
+body {
+  font-family: "Mona Sans", sans-serif;
+}
 
 #footer {
-  font-size: 0.875rem;
-  padding: 1rem;
+  /* font-size: 0.875rem; */
+  /* padding: 1rem; */
   display: flex;
   justify-content: center;
   color: black;
@@ -20,7 +20,7 @@
 }
 
 .fa-github {
-  color: black;
+  /* color: black; */
   opacity: 0.75;
   transition: transform 0.5s ease-in-out;
 }

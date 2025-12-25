@@ -1,18 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('../partials/head') %>
-  <body>
+  <body class="flex min-h-screen flex-col bg-gray-900 text-white">
     <%- include('../partials/nav') %>
 
-    <p>All genres:</p>
+    <div
+      class="mx-auto w-full max-w-[1366px] flex-grow px-4 py-8 sm:px-6 lg:px-8"
+    >
+      <!-- Header -->
+      <div class="mb-8 flex items-center justify-between">
+        <div>
+          <h1 class="mb-2 text-3xl font-bold text-white">All Genres</h1>
+          <p class="text-gray-400">Browse games by genre</p>
+        </div>
+        <a
+          href="/genres/new"
+          class="inline-flex items-center rounded-lg bg-green-600 px-6 py-3 font-bold text-white transition duration-300 hover:bg-green-700"
+        >
+          <i class="fas fa-plus mr-2"></i>
+          Add Genre
+        </a>
+      </div>
 
-    <a href="/genres/new">Add genre</a>
-
-    <ul>
-      <% genres.forEach(genre => { %>
-      <li><a href="/genres/<%= genre.genre_id %>"><%= genre.name %></a></li>
-      <% }) %>
-    </ul>
+      <!-- Genres Grid -->
+      <% if (genres.length === 0) { %>
+      <div class="py-16 text-center">
+        <i class="fas fa-tags mb-4 text-6xl text-gray-600"></i>
+        <h3 class="mb-2 text-xl font-semibold text-gray-400">
+          No genres available
+        </h3>
+        <p class="mb-6 text-gray-500">
+          Start organizing your games by adding genres!
+        </p>
+        <a
+          href="/genres/new"
+          class="inline-flex items-center rounded-lg bg-green-600 px-6 py-3 font-bold text-white transition duration-300 hover:bg-green-700"
+        >
+          <i class="fas fa-plus mr-2"></i> Add Your First Genre
+        </a>
+      </div>
+      <% } else { %>
+      <div
+        class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+      >
+        <% genres.forEach(genre => { %>
+        <a
+          href="/genres/<%= genre.genre_id %>"
+          class="transform rounded-lg bg-gray-800 p-6 shadow-lg transition duration-300 hover:scale-105 hover:bg-gray-700 hover:shadow-xl"
+        >
+          <div class="flex items-center justify-between gap-4">
+            <div>
+              <h3 class="mb-1 text-lg font-semibold text-white">
+                <%= genre.name %>
+              </h3>
+              <p class="text-sm text-gray-400">View games</p>
+            </div>
+            <i class="fas fa-tag text-2xl text-blue-500"></i>
+          </div>
+        </a>
+        <% }) %>
+      </div>
+      <% } %>
+    </div>
 
     <%- include('../partials/footer') %>
   </body>

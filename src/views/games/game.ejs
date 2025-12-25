@@ -1,36 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('../partials/head') %>
-  <body>
+  <body class="flex min-h-screen flex-col bg-gray-900 text-white">
     <%- include('../partials/nav') %>
 
-    <p>Game details:</p>
-
-    <a href="/games/<%= game.game_id %>/edit">Edit</a>
-
-    <form
-      method="POST"
-      action="/games/<%= game.game_id %>/delete"
-      style="display: inline"
-      onsubmit="return handleDeleteAction(this, 'game')"
+    <div
+      class="mx-auto w-full max-w-[1366px] flex-grow px-4 py-8 sm:px-6 lg:px-8"
     >
-      <input type="hidden" name="adminPassword" class="adminPasswordField" />
-      <button type="submit">Delete</button>
-    </form>
+      <!-- Game Header -->
+      <div class="mb-8 overflow-hidden rounded-lg bg-gray-800 shadow-2xl">
+        <div class="md:flex">
+          <div
+            class="border-b border-gray-700 md:w-1/3 md:border-r md:border-b-0"
+          >
+            <img
+              src="/<%= game.image %>"
+              alt="<%= game.title %>"
+              class="h-64 w-full object-contain p-8 md:h-96"
+            />
+          </div>
+          <div class="p-8 md:w-2/3">
+            <h1 class="mb-4 text-4xl font-bold text-white">
+              <%= game.title %>
+            </h1>
+
+            <div class="mb-6 flex flex-wrap gap-4">
+              <div class="rounded-full bg-gray-700 px-3 py-1">
+                <span class="text-sm text-gray-300"
+                  >Released:
+                  <span class="text-white"><%= game.released %></span></span
+                >
+              </div>
+              <div class="rounded-full bg-blue-600 px-3 py-1">
+                <span class="text-sm text-white"
+                  ><%= game.genre_name || 'Undefined genre' %></span
+                >
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <h3 class="mb-2 text-lg font-semibold text-gray-300">
+                Available Platforms:
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <% const validPlatforms = game.platforms.filter(platform =>
+                platform !== null); %> <% if (validPlatforms.length === 0) { %>
+                <span class="rounded-full bg-gray-600 px-3 py-1 text-sm"
+                  >Undefined platform</span
+                >
+                <% } else { %> <% validPlatforms.forEach(platform => { %>
+                <span class="rounded-full bg-green-600 px-3 py-1 text-sm"
+                  ><%= platform %></span
+                >
+                <% }) %> <% } %>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap gap-4">
+              <a
+                href="/games/<%= game.game_id %>/edit"
+                class="inline-flex items-center rounded-lg bg-blue-600 px-6 py-3 font-bold text-white transition duration-300 hover:bg-blue-700"
+              >
+                <i class="fas fa-edit mr-2"></i>
+                Edit Game
+              </a>
+
+              <form
+                method="POST"
+                action="/games/<%= game.game_id %>/delete"
+                style="display: inline"
+                onsubmit="return handleDeleteAction(this, 'game')"
+              >
+                <input
+                  type="hidden"
+                  name="adminPassword"
+                  class="adminPasswordField"
+                />
+                <button
+                  type="submit"
+                  class="inline-flex items-center rounded-lg bg-red-600 px-6 py-3 font-bold text-white transition duration-300 hover:cursor-pointer hover:bg-red-700"
+                >
+                  <i class="fas fa-trash mr-2"></i>
+                  Delete Game
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Back Button -->
+      <div class="mb-8"><%- include('../partials/goBack') %></div>
+    </div>
 
     <script src="/admin.js"></script>
-
-    <p>
-      <img src="/<%= game.image %>" alt="<%= game.title %>" />
-
-      <%- game.title %> | <%- game.released %> | <%- game.genre_name ||
-      'Undefined genre' %> | <% const validPlatforms =
-      game.platforms.filter(platform => platform !== null); if
-      (validPlatforms.length === 0) { %> Undefined platform <% } else {
-      validPlatforms.forEach((platform, index) => { %><%= platform %><%= index <
-      validPlatforms.length - 1 ? ' / ' : '' %><% }) } %>
-    </p>
-
-    <%- include('../partials/goBack') %> <%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>
   </body>
 </html>
