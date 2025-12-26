@@ -1,32 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('../partials/head') %>
-  <body>
+  <body class="flex min-h-screen flex-col bg-gray-900 text-white">
     <%- include('../partials/nav') %>
 
-    <form
-      action="/genres/<%= genre.genre_id %>/edit"
-      method="post"
-      onsubmit="return handleEditAction(this)"
+    <div
+      class="mx-auto w-full max-w-[1366px] flex-grow px-4 py-8 sm:px-6 lg:px-8"
     >
-      <p><label for="name">Edit genre:</label></p>
+      <div class="mx-auto max-w-md">
+        <div class="mb-8">
+          <h1 class="mb-2 text-3xl font-bold text-white">Edit Genre</h1>
+          <p class="text-gray-400">Update genre information</p>
+        </div>
 
-      <%- include('../partials/showError') %>
+        <div class="rounded-lg bg-gray-800 p-6 shadow-lg">
+          <form
+            action="/genres/<%= genre.genre_id %>/edit"
+            method="post"
+            onsubmit="return handleEditAction(this)"
+            class="space-y-6"
+          >
+            <%- include('../partials/showError') %>
 
-      <input
-        type="text"
-        id="name"
-        name="name"
-        value="<%= genre.name %>"
-        required
-      />
-      <input type="hidden" name="adminPassword" id="adminPasswordField" />
-      <button type="submit">Update</button>
-    </form>
+            <div>
+              <label
+                for="name"
+                class="mb-2 block text-sm font-medium text-gray-300"
+              >
+                Genre Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value="<%= genre.name %>"
+                required
+                class="w-full rounded-lg border border-gray-600 bg-gray-700 px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                placeholder="Enter genre name"
+              />
+            </div>
+
+            <input type="hidden" name="adminPassword" id="adminPasswordField" />
+
+            <div class="flex gap-3">
+              <button
+                type="submit"
+                class="flex-1 rounded-lg bg-green-600 px-6 py-3 font-bold text-white transition duration-300 hover:cursor-pointer hover:bg-green-700 focus:ring-2 focus:ring-green-500 focus:outline-none"
+              >
+                <i class="fas fa-save mr-2"></i>
+                Update Genre
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="mt-6"><%- include('../partials/goBack') %></div>
+      </div>
+    </div>
 
     <script src="/admin.js"></script>
-
-    <br />
-    <%- include('../partials/goBack') %> <%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>
   </body>
 </html>

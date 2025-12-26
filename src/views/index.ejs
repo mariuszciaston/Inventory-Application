@@ -5,7 +5,7 @@
     <%- include('partials/nav') %>
 
     <!-- Hero Section -->
-    <div class="relative bg-gradient-to-r from-blue-900 to-purple-900 py-16">
+    <div class="bg-gradient-to-r from-blue-900 to-purple-900 py-16">
       <div class="mx-auto w-full max-w-[1366px] px-4 sm:px-6 lg:px-8">
         <div class="text-center">
           <h1 class="mb-4 text-4xl font-bold md:text-6xl">Your Game Library</h1>
@@ -92,22 +92,29 @@
               href="/games/<%= game.game_id %>"
               class="flex flex-col gap-3 p-3"
             >
-              <div class="relative">
-                <img
-                  src="<%= game.image %>"
-                  alt="<%= game.title %>"
-                  class="h-48 w-full object-contain"
-                />
-                <div
-                  class="bg-opacity-0 group-hover:bg-opacity-30 inset-0 flex items-center justify-center bg-black transition duration-300"
-                ></div>
+              <% if (game.image !== null) { %>
+              <img
+                src="<%= game.image %>"
+                alt="<%= game.title %>"
+                class="h-48 w-full object-contain"
+              />
+              <% } else { %>
+              <div
+                class="m-auto flex h-48 w-36 items-center justify-center bg-gray-900"
+              >
+                <i class="fas fa-image text-4xl text-gray-600"></i>
               </div>
-              <div class="">
+              <% } %>
+
+              <div>
                 <h3
                   class="text-center text-sm font-semibold text-white transition duration-300"
                 >
                   <%= game.title %>
                 </h3>
+                <p class="mt-1 text-center text-xs text-gray-400">
+                  <%= game.released %> • <%= game.genre || 'Undefined genre' %>
+                </p>
               </div>
             </a>
           </div>

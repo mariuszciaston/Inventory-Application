@@ -1,7 +1,18 @@
 import * as db from "./pool.js";
 
 const getAllGames = async () => {
-  const result = await db.query("SELECT * FROM games ORDER BY title");
+  const result = await db.query(
+    `SELECT 
+      games.game_id,
+      games.title,
+      games.released,
+      games.image,
+      games.genre_id,
+      genres.name AS genre
+    FROM games
+    LEFT JOIN genres ON games.genre_id = genres.genre_id
+    ORDER BY games.title`
+  );
   return result.rows;
 };
 

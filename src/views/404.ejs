@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('partials/head') %>
-  <body>
-    <p>Page not found</p>
+  <body class="flex min-h-screen flex-col bg-gray-900 text-white">
+    <%- include('partials/nav') %>
 
-    <a href="/" class="font-semibold text-blue-500 hover:underline"
-      >Go to Home Page</a
+    <div
+      class="mx-auto w-full max-w-[1366px] flex-grow px-4 py-8 sm:px-6 lg:px-8"
     >
+      <div class="py-16 text-center">
+        <i
+          class="fas fa-exclamation-triangle mb-6 text-8xl text-yellow-500"
+        ></i>
+        <h1 class="mb-4 text-6xl font-bold text-white">404</h1>
+        <h2 class="mb-4 text-2xl font-semibold text-gray-300">
+          Page Not Found
+        </h2>
+        <p class="mb-8 text-lg text-gray-400">
+          The page you're looking for doesn't exist or has been moved.
+        </p>
+        <a
+          href="/"
+          class="inline-flex items-center rounded-lg bg-blue-600 px-6 py-3 font-bold text-white transition duration-300 hover:bg-blue-700"
+        >
+          <i class="fas fa-home mr-2"></i>
+          Go to Home Page
+        </a>
+      </div>
+    </div>
+
     <%- include('partials/footer') %>
   </body>
 </html>
