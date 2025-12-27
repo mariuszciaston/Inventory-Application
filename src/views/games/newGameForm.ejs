@@ -49,7 +49,7 @@
               <label for="genre" class="mb-2 block text-sm font-medium text-gray-300">
                 Genre
               </label>
-              <select name="genre" id="genre" class="w-full rounded-lg border border-gray-600 bg-gray-700 px-4 py-3 text-white focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <select name="genre" id="genre" class="w-full rounded-lg border border-gray-600 bg-gray-700 px-4 py-3 text-white focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xIDFMNiA2TDExIDEiIHN0cm9rZT0iIzlDQTNBRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+')] bg-no-repeat bg-[right_1rem_center]">
                 <option value="" disabled <%= typeof genre === 'undefined' || !genre ? 'selected' : '' %>>Select genre</option>
                 <% genres.forEach(genreItem => { %>
                 <option value="<%= genreItem.genre_id %>" <%= typeof genre !== 'undefined' && genre == genreItem.genre_id ? 'selected' : '' %>><%= genreItem.name %></option>
