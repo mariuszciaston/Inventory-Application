@@ -15,7 +15,7 @@ import { validateGame } from "../middlewares/validator.js";
 const indexRouter = Router();
 
 indexRouter.get("/", renderIndexPage);
-indexRouter.get("/new", renderNewGameForm);
+indexRouter.get("/games/new", renderNewGameForm);
 indexRouter.get("/games/:id", renderGamePage);
 indexRouter.get("/games/:id/edit", renderEditGameForm);
 
