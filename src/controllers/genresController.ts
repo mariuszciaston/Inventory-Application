@@ -37,12 +37,24 @@ async function removeGenre(req: Request, res: Response) {
 
 async function renderEditGenreForm(req: Request, res: Response) {
   const genre = await getGenreById(req.params.id);
+
+  if (!genre) {
+    res.status(404).render("404");
+    return;
+  }
+
   res.render("genres/genreEditForm", { genre });
 }
 
 async function renderGamesByGenre(req: Request, res: Response) {
-  const games = await getGamesByGenre(req.params.id);
   const genre = await getGenreById(req.params.id);
+
+  if (!genre) {
+    res.status(404).render("404");
+    return;
+  }
+
+  const games = await getGamesByGenre(req.params.id);
   res.render("genres/genre", { games, genre });
 }
 

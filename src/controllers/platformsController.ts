@@ -39,12 +39,24 @@ async function removePlatform(req: Request, res: Response) {
 
 async function renderEditPlatformForm(req: Request, res: Response) {
   const platform = await getPlatformById(req.params.id);
+
+  if (!platform) {
+    res.status(404).render("404");
+    return;
+  }
+
   res.render("platforms/platformEditForm", { platform });
 }
 
 async function renderGamesByPlatform(req: Request, res: Response) {
-  const games = await getGamesByPlatform(req.params.id);
   const platform = await getPlatformById(req.params.id);
+
+  if (!platform) {
+    res.status(404).render("404");
+    return;
+  }
+
+  const games = await getGamesByPlatform(req.params.id);
   res.render("platforms/platform", {
     games,
     platform,

@@ -1,3 +1,5 @@
+import { QueryResultRow } from "pg";
+
 import * as db from "./pool.js";
 
 const getAllGames = async () => {
@@ -11,7 +13,7 @@ const getAllGames = async () => {
       genres.name AS genre
     FROM games
     LEFT JOIN genres ON games.genre_id = genres.genre_id
-    ORDER BY games.title`
+    ORDER BY games.title`,
   );
   return result.rows;
 };
@@ -26,19 +28,24 @@ const getAllPlatforms = async () => {
   return result.rows;
 };
 
-const getPlatformById = async (platformId: string) => {
+const getPlatformById = async (
+  platformId: string,
+): Promise<null | QueryResultRow> => {
   const result = await db.query(
     `SELECT * FROM platforms WHERE platform_id = $1`,
     [platformId],
   );
-  return result.rows[0];
+  return result.rows[0] ?? null;
 };
 
-const getGenreById = async (genreId: string) => {
-  const result = await db.query(`SELECT * FROM genres WHERE genre_id = $1`, [
+const getGenreById = async (
+  genreId: string,
+): Promise<null | QueryResultRow> => {
+  const result = await db.query("SELECT * FROM genres WHERE genre_id = $1", [
     genreId,
   ]);
-  return result.rows[0];
+
+  return result.rows[0] ?? null;
 };
 
 const updatePlatformName = async (
@@ -79,7 +86,9 @@ const deleteGame = async (gameId: string) => {
   return await db.query(`DELETE FROM games WHERE game_id = $1`, [gameId]);
 };
 
-const getGameDetails = async (gameId: string) => {
+const getGameDetails = async (
+  gameId: string,
+): Promise<null | QueryResultRow> => {
   const result = await db.query(
     `SELECT
       games.game_id,
@@ -102,7 +111,7 @@ const getGameDetails = async (gameId: string) => {
     [gameId],
   );
 
-  return result.rows[0];
+  return result.rows[0] ?? null;
 };
 
 const getGamesByGenre = async (genreId: string) => {
