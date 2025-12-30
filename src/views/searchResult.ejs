@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+  <body class="flex min-h-screen flex-col bg-gray-900 text-white">
+    <%- include('partials/nav') %>
+
+    <!-- Main Content -->
+    <div
+      class="mx-auto w-full max-w-[1366px] flex-grow px-4 py-8 sm:px-6 lg:px-8"
+    >
+      <!-- Games Grid -->
+      <div class="mb-8">
+        <div class="mb-6 flex">
+          <% if (q) { %>
+          <h2 class="text-2xl font-bold text-gray-100">
+            Search results for "<%= q %>" (<%= games.length %>)
+          </h2>
+          <% } else { %>
+          <h2 class="text-2xl font-bold text-gray-100">
+            All Games (<%= games.length %>)
+          </h2>
+          <% } %>
+        </div>
+
+        <% if (games.length === 0) { %>
+        <div class="py-16 text-center">
+          <i class="fas fa-gamepad mb-4 text-6xl text-gray-600"></i>
+          <h3 class="mb-2 text-xl font-semibold text-gray-400">
+            <% if (q) { %>No games found matching "<%= q %>"<% } else { %>No
+            games in your library yet<% } %>
+          </h3>
+          <p class="mb-6 text-gray-500">
+            <% if (q) { %>Try a different search or add this game to your
+            collection.<% } else { %>Start building your collection by adding
+            your first game!<% } %>
+          </p>
+          <% if (!q) { %>
+          <a
+            href="/new"
+            class="inline-flex items-center rounded-lg bg-green-600 px-6 py-3 font-bold text-white transition duration-300 hover:bg-green-700"
+          >
+            <i class="fas fa-plus mr-2"></i> Add Your First Game
+          </a>
+          <% } %>
+        </div>
+        <% } else { %>
+        <div
+          class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+        >
+          <% games.forEach(game => { %>
+          <div
+            class="group flex transform justify-center overflow-hidden rounded-lg bg-gray-800 shadow-lg transition duration-300 hover:scale-105 hover:shadow-2xl"
+          >
+            <a
+              href="/games/<%= game.game_id %>"
+              class="flex w-full flex-col gap-3 p-3"
+            >
+              <% if (game.image !== null) { %>
+              <img
+                src="<%= game.image %>"
+                alt="<%= game.title %>"
+                class="h-48 w-full object-contain"
+              />
+              <% } else { %>
+              <div
+                class="m-auto flex min-h-48 w-full flex-1 items-center justify-center bg-gray-900"
+              >
+                <i class="fas fa-image text-4xl text-gray-600"></i>
+              </div>
+              <% } %>
+
+              <div>
+                <h3
+                  class="text-center text-sm font-semibold text-white transition duration-300"
+                >
+                  <%= game.title %>
+                </h3>
+                <p class="mt-1 text-center text-xs text-gray-400">
+                  <%= game.released %> • <%= game.genre || 'Undefined genre' %>
+                </p>
+              </div>
+            </a>
+          </div>
+          <% }) %>
+        </div>
+        <% } %>
+      </div>
+    </div>
+
+    <%- include('partials/footer') %>
+  </body>
+</html>

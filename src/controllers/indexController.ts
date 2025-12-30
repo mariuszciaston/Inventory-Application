@@ -9,6 +9,7 @@ import {
   getAllGenres,
   getAllPlatforms,
   getGameDetails,
+  getGamesByQuery,
   postNewGame,
   updateGameDetails,
 } from "../db/queries.js";
@@ -76,9 +77,16 @@ async function renderGamePage(req: Request, res: Response) {
   res.render("games/game", { game });
 }
 
-async function renderIndexPage(_req: Request, res: Response) {
-  const games = await getAllGames();
-  res.render("index", { games });
+async function renderIndexPage(req: Request, res: Response) {
+  const q = typeof req.query.q === "string" ? req.query.q.trim() : "";
+
+  if (q) {
+    const games = await getGamesByQuery(q);
+    res.render("searchResult", { games, q });
+  } else {
+    const games = await getAllGames();
+    res.render("index", { games, q });
+  }
 }
 
 async function renderNewGameForm(req: Request, res: Response) {
@@ -127,5 +135,6 @@ export {
   renderGamePage,
   renderIndexPage,
   renderNewGameForm,
+  // renderSearchPage,
   submitNewGame,
 };
