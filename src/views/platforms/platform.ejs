@@ -73,11 +73,11 @@
             <% } %>
 
             <div>
-              <h3
+              <h2
                 class="text-center text-sm font-semibold text-white transition duration-300"
               >
                 <%= game.title %>
-              </h3>
+              </h2>
               <p class="mt-1 text-center text-xs text-gray-400">
                 <%= game.released %> • <%= game.genre || 'Undefined genre' %>
               </p>
@@ -89,9 +89,9 @@
       <% } else { %>
       <div class="py-16 text-center">
         <i class="fas fa-chess-knight mb-4 text-6xl text-gray-600"></i>
-        <h3 class="mb-2 text-xl font-semibold text-gray-400">
+        <h2 class="mb-2 text-xl font-semibold text-gray-400">
           No games found for this platform
-        </h3>
+        </h2>
         <p class="mb-6 text-gray-500">Add some games to see them here!</p>
       </div>
       <% } %>
