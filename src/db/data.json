@@ -6,7 +6,7 @@
     "developer": "New World Computing",
     "publisher": "The 3DO Company",
     "platforms": ["DOS", "Windows", "Mac OS"],
-    "image": "images/Heroes_2_cover.jpg"
+    "image": "/images/Heroes_2_cover.jpg"
   },
   {
     "title": "Heroes of Might and Magic III",
@@ -15,7 +15,7 @@
     "developer": "New World Computing",
     "publisher": "The 3DO Company",
     "platforms": ["Windows", "Mac OS", "Linux"],
-    "image": "images/Homm3boxart.jpg"
+    "image": "/images/Homm3boxart.jpg"
   },
   {
     "title": "Age of Empires",
@@ -24,7 +24,7 @@
     "developer": "Ensemble Studios",
     "publisher": "Microsoft",
     "platforms": ["Windows"],
-    "image": "images/Age_of_Empires_Coverart.jpg"
+    "image": "/images/Age_of_Empires_Coverart.jpg"
   },
   {
     "title": "Age of Empires II",
@@ -33,7 +33,7 @@
     "developer": "Ensemble Studios",
     "publisher": "Microsoft",
     "platforms": ["Windows", "Mac OS", "PlayStation 2"],
-    "image": "images/Age_of_Empires_II_-_The_Age_of_Kings_Coverart.png"
+    "image": "/images/Age_of_Empires_II_-_The_Age_of_Kings_Coverart.png"
   },
   {
     "title": "Populous: The Beginning",
@@ -42,7 +42,7 @@
     "developer": "Bullfrog Productions",
     "publisher": "Electronic Arts",
     "platforms": ["Windows", "PlayStation"],
-    "image": "images/Populous-the-beginning.png"
+    "image": "/images/Populous-the-beginning.png"
   },
   {
     "title": "Dark Colony",
@@ -51,7 +51,7 @@
     "developer": "Alternative Reality Technologies",
     "publisher": "Take-Two Interactive",
     "platforms": ["Windows", "Mac OS"],
-    "image": "images/Dark_Colony_Coverart.png"
+    "image": "/images/Dark_Colony_Coverart.png"
   },
   {
     "title": "Settlers II",
@@ -60,7 +60,7 @@
     "developer": "Blue Byte",
     "publisher": "Blue Byte",
     "platforms": ["DOS", "Windows", "Mac OS"],
-    "image": "images/Settlers_2_cover.png"
+    "image": "/images/Settlers_2_cover.png"
   },
   {
     "title": "Settlers III",
@@ -69,7 +69,7 @@
     "developer": "Blue Byte",
     "publisher": "Blue Byte",
     "platforms": ["Windows"],
-    "image": "images/Settlers_3_cover.jpg"
+    "image": "/images/Settlers_3_cover.jpg"
   },
   {
     "title": "Warcraft III",
@@ -78,7 +78,7 @@
     "developer": "Blizzard Entertainment",
     "publisher": "Blizzard Entertainment",
     "platforms": ["Windows", "Mac OS"],
-    "image": "images/WarcraftIII.jpg"
+    "image": "/images/WarcraftIII.jpg"
   },
   {
     "title": "StarCraft",
@@ -87,7 +87,7 @@
     "developer": "Blizzard Entertainment",
     "publisher": "Blizzard Entertainment",
     "platforms": ["Windows", "Mac OS"],
-    "image": "images/StarCraft_box_art.jpg"
+    "image": "/images/StarCraft_box_art.jpg"
   },
   {
     "title": "StarCraft II",
@@ -96,7 +96,7 @@
     "developer": "Blizzard Entertainment",
     "publisher": "Blizzard Entertainment",
     "platforms": ["Windows", "Mac OS"],
-    "image": "images/StarCraft_II_-_Box_Art.jpg"
+    "image": "/images/StarCraft_II_-_Box_Art.jpg"
   },
   {
     "title": "Diablo",
@@ -105,7 +105,7 @@
     "developer": "Blizzard North",
     "publisher": "Blizzard Entertainment",
     "platforms": ["Windows", "Mac OS"],
-    "image": "images/Diablo_Coverart.png"
+    "image": "/images/Diablo_Coverart.png"
   },
   {
     "title": "Diablo II",
@@ -114,7 +114,7 @@
     "developer": "Blizzard North",
     "publisher": "Blizzard Entertainment",
     "platforms": ["Windows", "Mac OS"],
-    "image": "images/Diablo_II_Coverart.png"
+    "image": "/images/Diablo_II_Coverart.png"
   },
   {
     "title": "Fallout",
@@ -123,7 +123,7 @@
     "developer": "Interplay Productions",
     "publisher": "Interplay Productions",
     "platforms": ["Windows", "PlayStation"],
-    "image": "images/Fallout.jpg"
+    "image": "/images/Fallout.jpg"
   },
   {
     "title": "Fallout 2",
@@ -132,7 +132,7 @@
     "developer": "Black Isle Studios",
     "publisher": "Interplay Productions",
     "platforms": ["Windows"],
-    "image": "images/PC_Game_Fallout_2.jpg"
+    "image": "/images/PC_Game_Fallout_2.jpg"
   },
   {
     "title": "Gorky 17",
@@ -141,7 +141,7 @@
     "developer": "Metropolis Software",
     "publisher": "Monolith Productions",
     "platforms": ["Windows"],
-    "image": "images/gorky17.jpg"
+    "image": "/images/gorky17.jpg"
   },
   {
     "title": "The Neverhood",
@@ -150,7 +150,7 @@
     "developer": "The Neverhood, Inc.",
     "publisher": "DreamWorks Interactive",
     "platforms": ["Windows", "Mac OS"],
-    "image": "images/The_Neverhood_-_box_art.jpg"
+    "image": "/images/The_Neverhood_-_box_art.jpg"
   },
   {
     "title": "Oddworld: Abe's Oddysee",
@@ -159,7 +159,7 @@
     "developer": "Oddworld Inhabitants",
     "publisher": "GT Interactive",
     "platforms": ["PlayStation", "Windows"],
-    "image": "images/Abe's_Oddysee_Cover.jpg"
+    "image": "/images/Abe's_Oddysee_Cover.jpg"
   },
   {
     "title": "Oddworld: Abe's Exoddus",
@@ -168,7 +168,7 @@
     "developer": "Oddworld Inhabitants",
     "publisher": "GT Interactive",
     "platforms": ["PlayStation", "Windows"],
-    "image": "images/Oddworld_Abe's_Exoddus_cover.jpg"
+    "image": "/images/Oddworld_Abe's_Exoddus_cover.jpg"
   },
   {
     "title": "Tekken 3",
@@ -177,6 +177,6 @@
     "developer": "Namco",
     "publisher": "Namco",
     "platforms": ["Arcade", "PlayStation"],
-    "image": "images/Tekken_3_flyer.jpg"
+    "image": "/images/Tekken_3_flyer.jpg"
   }
 ]
