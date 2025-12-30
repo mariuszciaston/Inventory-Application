@@ -6,7 +6,7 @@
 
     <!-- Hero Section -->
     <div class="bg-gradient-to-r from-blue-900 to-purple-900 py-16">
-      <div class="mx-auto w-full max-w-[1366px] px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto w-full max-w-[1366px] flex-grow px-4 sm:px-6 lg:px-8">
         <div class="text-center">
           <h1 class="mb-4 text-4xl font-bold md:text-6xl">Your Game Library</h1>
           <p class="mb-8 text-xl text-gray-300">
@@ -24,7 +24,9 @@
     </div>
 
     <!-- Main Content -->
-    <div class="mx-auto w-full max-w-[1366px] px-4 py-8 sm:px-6 lg:px-8">
+    <div
+      class="mx-auto w-full max-w-[1366px] flex-grow px-4 py-8 sm:px-6 lg:px-8"
+    >
       <!-- Featured Game -->
       <% if (games.length > 0) { %>
       <div class="mb-12">
@@ -59,14 +61,12 @@
       <!-- Games Grid -->
       <div class="mb-8">
         <div class="mb-6 flex">
-          <h2 class="text-2xl font-bold text-gray-100">
-            All Games (<%= games.length %>)
-          </h2>
+          <h2 class="text-2xl font-bold text-gray-100">Top Games</h2>
         </div>
 
         <% if (games.length === 0) { %>
         <div class="py-16 text-center">
-          <i class="fas fa-gamepad mb-4 text-6xl text-gray-600"></i>
+          <i class="fas fa-chess-knight mb-4 text-6xl text-gray-600"></i>
           <h3 class="mb-2 text-xl font-semibold text-gray-400">
             No games in your library yet
           </h3>
@@ -74,7 +74,7 @@
             Start building your collection by adding your first game!
           </p>
           <a
-            href="/new"
+            href="/games/new"
             class="inline-flex items-center rounded-lg bg-green-600 px-6 py-3 font-bold text-white transition duration-300 hover:bg-green-700"
           >
             <i class="fas fa-plus mr-2"></i> Add Your First Game

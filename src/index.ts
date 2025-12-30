@@ -4,6 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "url";
 
 import errorHandler from "./middlewares/errorHandler.js";
+import gamesRouter from "./routes/gamesRouter.js";
 import genresRouter from "./routes/genresRouter.js";
 import indexRouter from "./routes/indexRouter.js";
 import platformsRouter from "./routes/platformsRouter.js";
@@ -19,9 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.use("/", indexRouter);
-app.get("/games", (_req, res) => {
-  res.redirect("/");
-});
+app.use("/games", gamesRouter);
 app.use("/genres", genresRouter);
 app.use("/platforms", platformsRouter);
 

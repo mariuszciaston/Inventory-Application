@@ -1,47 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('partials/head') %>
+  <%- include('../partials/head') %>
   <body class="flex min-h-screen flex-col bg-gray-900 text-white">
-    <%- include('partials/nav') %>
+    <%- include('../partials/nav') %>
 
     <!-- Main Content -->
     <div
       class="mx-auto w-full max-w-[1366px] flex-grow px-4 py-8 sm:px-6 lg:px-8"
     >
+      <!-- Header -->
+      <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h1 class="mb-2 text-3xl font-bold text-white">All Games</h1>
+          <p class="text-gray-400">Browse games (<%= games.length %>)</p>
+        </div>
+        <a
+          href="/games/new"
+          class="inline-flex items-center rounded-lg bg-green-600 px-6 py-3 font-bold text-white transition duration-300 hover:bg-green-700"
+        >
+          <i class="fas fa-plus mr-2"></i>
+          Add Game
+        </a>
+      </div>
+
       <!-- Games Grid -->
       <div class="mb-8">
-        <div class="mb-6 flex">
-          <% if (q) { %>
-          <h2 class="text-2xl font-bold text-gray-100">
-            Search results for "<%= q %>" (<%= games.length %>)
-          </h2>
-          <% } else { %>
-          <h2 class="text-2xl font-bold text-gray-100">
-            All Games (<%= games.length %>)
-          </h2>
-          <% } %>
-        </div>
-
         <% if (games.length === 0) { %>
         <div class="py-16 text-center">
           <i class="fas fa-chess-knight mb-4 text-6xl text-gray-600"></i>
           <h3 class="mb-2 text-xl font-semibold text-gray-400">
-            <% if (q) { %>No games found matching "<%= q %>"<% } else { %>No
-            games in your library yet<% } %>
+            No games in your library yet
           </h3>
           <p class="mb-6 text-gray-500">
-            <% if (q) { %>Try a different search or add this game to your
-            collection.<% } else { %>Start building your collection by adding
-            your first game!<% } %>
+            Start building your collection by adding your first game!
           </p>
-          <% if (!q) { %>
           <a
             href="/games/new"
             class="inline-flex items-center rounded-lg bg-green-600 px-6 py-3 font-bold text-white transition duration-300 hover:bg-green-700"
           >
             <i class="fas fa-plus mr-2"></i> Add Your First Game
           </a>
-          <% } %>
         </div>
         <% } else { %>
         <div
@@ -87,6 +85,6 @@
       </div>
     </div>
 
-    <%- include('partials/footer') %>
+    <%- include('../partials/footer') %>
   </body>
 </html>
