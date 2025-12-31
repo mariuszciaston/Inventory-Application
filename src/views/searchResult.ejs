@@ -53,13 +53,14 @@
           >
             <a
               href="/games/<%= game.game_id %>"
-              class="flex w-full flex-col gap-3 p-3"
+              class="flex flex-col gap-3 p-3"
             >
               <% if (game.image !== null) { %>
               <img
                 src="<%= game.image %>"
                 alt="<%= game.title %>"
-                class="h-48 w-full object-contain"
+                class="h-48 opacity-0 transition-opacity duration-0"
+                onload="this.classList.remove('opacity-0')""
               />
               <% } else { %>
               <div
