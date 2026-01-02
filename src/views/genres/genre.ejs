@@ -50,11 +50,11 @@
       >
         <% games.forEach(game => { %>
         <div
-          class="group flex transform justify-center overflow-hidden rounded-lg bg-gray-800 shadow-lg transition duration-300 hover:scale-105 hover:shadow-2xl"
+          class="flex transform justify-center overflow-hidden rounded-lg bg-gray-800 shadow-lg transition duration-300 hover:scale-105 hover:shadow-2xl"
         >
           <a href="/games/<%= game.game_id %>" class="flex flex-col gap-3 p-3">
             <% if (game.image !== null) { %>
-            <img src="<%= game.image %>" alt="<%= game.title %>" class="h-48 opacity-0 transition-opacity duration-0"
+            <img src="<%= game.image %>" alt="<%= game.title %>" class="h-48 object-contain opacity-0 transition-opacity duration-0"
                 onload="this.classList.remove('opacity-0')"" />
             <% } else { %>
             <div
