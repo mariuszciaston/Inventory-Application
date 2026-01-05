@@ -11,7 +11,7 @@ function openAdminModal(form, selector, options = {}) {
 
   // Fallback to prompt if modal is not present
   if (!modal) {
-    const promptMessage = options.message || "Enter admin password (admin123):";
+    const promptMessage = options.message || "Enter admin password:";
     const password = prompt(promptMessage);
     if (password === null) return false;
     form.querySelector(selector).value = password;
